@@ -1,0 +1,56 @@
+function plotNumOfNeighborBias
+
+close all
+weight = [0.5,0.5];
+dAngle = 45;
+snr = 10;
+bVal = 3000;
+
+fileName = sprintf('SimData/Bias [Weight=(%0.1f, %0.1f)][sepAngle=%d][SNR=%d][bVal=%d].mat', weight(1), weight(2), dAngle, snr, bVal);
+load(fileName);
+real_ODF = real_ODF/sum(real_ODF);
+
+nSamples = 3000;
+nNeighbors = 1:100;
+biases = zeros(1, length(nSamples));
+logBiases = [];
+
+% load GradientOrientations_64
+% UnitVectors
+% order = 4;
+% G=constructMatrixOfMonomials(g,order);
+
+for i=1:length(nNeighbors)
+    disp(['Neighbor no. = ', num2str(nNeighbors(i))]);
+    for j=1:nSamples
+        randIdx = randperm(size(sq_ODF_matrix,2));
+        rand_sq_ODF_matrix = sq_ODF_matrix(:, randIdx(1:nNeighbors(i)));
+        mean_ODF = calc_ODF_mean(rand_sq_ODF_matrix);
+        %mean_ODF_coef = G\(mean_ODF.^2);
+        %figure, plotTensors(mean_ODF_coef,0.9,[321 1 0]);
+        d = dot(mean_ODF, real_ODF);
+        odfLog = odfLog+(real_ODF-d*mean_ODF)/sqrt(1-d*d)*acos(d);
+    end
+end
+
+for i=1:length(nSamples)
+    disp(['Sample no. = ', num2str(nSamples(i))]);
+    randIdx = randperm(size(sq_ODF_matrix,2));
+    n =1;
+    odfLog = 0;
+    for j=1:nSamples(i)
+        rand_sq_ODF_matrix = sq_ODF_matrix(:, randIdx(n:n+nNeighbors-1));
+        n = n+nNeighbors;
+        mean_ODF = calc_ODF_mean(rand_sq_ODF_matrix);
+        %mean_ODF_coef = G\(mean_ODF.^2);
+        %figure, plotTensors(mean_ODF_coef,0.9,[321 1 0]);
+        d = dot(mean_ODF, real_ODF);
+        odfLog = odfLog+(real_ODF-d*mean_ODF)/sqrt(1-d*d)*acos(d);
+    end
+    odfLog = odfLog/nSamples(i);
+    logBiases = [logBiases, odfLog];
+    biases(i) = norm(odfLog);
+end
+
+
+end

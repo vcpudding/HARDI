@@ -1,0 +1,6 @@
+function filteredImg = avrFilter3D (img, maskSize)
+
+for i=1:(maskSize+1)/2
+    
+
+end

@@ -1,0 +1,7 @@
+clear all
+close all
+
+weights = [0.5 0.5; 0.4 0.6; 0.3 0.7];
+sepAngles = [45, 60, 75, 90];
+SNRs = [100, 50, 25];
+bVals = [1500, 3000

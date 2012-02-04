@@ -1,0 +1,85 @@
+function volDat = simulateCrossingFibers (dims, fiberWidth, bVal, snr)
+
+load GradientOrientations_64
+UnitVectors
+order = 4;
+delta = 200;
+
+volDat = zeros([dims, length(GradientOrientations)]);
+
+border1 = (dims(1)-fiberWidth)/2;
+border2 = (dims(2)-fiberWidth)/2;
+
+sig = 1/snr;
+
+for i=1:dims(1)
+    for j=1:dims(2)
+
+        if i-border1>=1 && i-border1<=fiberWidth
+            if j-border2>=1 && j-border2 <=fiberWidth
+                %crossing region
+                S = simulateDWData(bVal, GradientOrientations, [pi/2, pi], [0.5, 0.5], 1);
+            else
+                %horizontal region
+                S = simulateDWData(bVal, GradientOrientations, 0, 1, 1);
+            end
+        else
+            if j-border2>=1 && j-border2 <=fiberWidth
+                %vertical region
+                S = simulateDWData(bVal, GradientOrientations, pi/2, 1, 1);
+            else
+                %background
+                S = simulateDWData(bVal, GradientOrientations, 0, 1, 0);
+            end
+        end
+        
+        for k=1:dims(3)
+            volDat(i,j,k,:) = abs(S+sig*(randn(size(S))+sqrt(-1)*randn(size(S))));
+        end
+    end
+end
+
+close all;
+m = 4;%ceil(sqrt(length(GradientOrientations)));
+n = 4;%ceil(length(GradientOrientations)/m);
+
+%colormap('gray');
+ratio = length(colormap)/max(max(max(volDat(:,:,:,i))));
+
+for i=1:length(GradientOrientations)
+    if mod(i, m*n)==1
+        hFig = figure;
+        set(gcf, 'colormap', gray);
+    end
+    subplot(n,m,mod(i-1, m*n)+1);
+    borderedSlice = zeros(dims(1:2)+2);
+    borderedSlice(2:dims(1)+1, 2:dims(2)+1) = volDat(:,:,1,i);
+    image(borderedSlice*ratio);
+    %imshow(volDat(:,:,1,i));
+    iptsetpref('ImshowBorder', 'tight');
+    title(sprintf('(%0.2f, %0.2f, %0.2f)', GradientOrientations(i,:)));
+    axis square;
+    axis off;
+    box on;
+    if mod(i+1, m*n)==1 || i==length(GradientOrientations)
+        saveas(hFig, sprintf('comparison_output/figures/DWI%02d[SNR=%d].eps', ceil(i/m/n), snr));
+    end
+end
+
+hFig = figure;
+for i=1:dims(1)
+    for j=1:dims(2)
+        subplot(dims(1), dims(2), j+dims(2)*(i-1));
+        %subaxis(dims(1), dims(2), j+dims(2)*(i-1), 'Margin', 0);
+        S = reshape(volDat(i,j,1,:), [length(GradientOrientations),1]);
+        [ODF_coef, ODF_tensor] = Estimate_tensorODF(S, 1, GradientOrientations, order, delta);
+        plotTensors(ODF_coef, 0.9, [321, 1 0]);
+        axis off;
+    end
+end
+
+saveas(hFig, sprintf('comparison_output/figures/ODF[SNR=%d].eps', snr));
+
+save(sprintf('SimData
+
+end

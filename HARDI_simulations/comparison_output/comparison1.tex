@@ -1,0 +1,701 @@
+\documentclass[10pt]{article} \usepackage[margin=1in]{geometry}
+
+\usepackage[shortlabels]{enumitem} \setcounter{secnumdepth}{4}
+
+
+\usepackage{mathptmx} \usepackage{graphicx} \usepackage{times}
+\usepackage{comment} \usepackage{amstext} \usepackage{amsmath}
+\usepackage{amssymb} \usepackage{array} \usepackage{multirow}
+\usepackage{url} \usepackage{subfigure} \usepackage{xcolor}
+\usepackage{float} \usepackage{slashbox} \usepackage{pict2e}
+\usepackage{tikz} \newcommand\diag[4]{%
+  \multicolumn{1}{p{#2}|}{\hskip-\tabcolsep
+    $\vcenter{\begin{tikzpicture}[baseline=0,anchor=south west,inner
+        sep=#1] \path[use as bounding box] (0,0) rectangle
+        (#2+2\tabcolsep,\baselineskip); \node[minimum
+        width={#2+2\tabcolsep},minimum
+        height=\baselineskip+\extrarowheight] (box) {}; \draw
+        (box.north west) -- (box.south east); \node[anchor=south west]
+        at (box.south west) {#3}; \node[anchor=north east] at
+        (box.north east) {#4};
+      \end{tikzpicture}}$\hskip-\tabcolsep}}
+
+
+\usepackage{fancyhdr, lastpage} \pagestyle{fancy} \fancyhf{}
+%
+\lhead{} \chead{Comparison of de-noising methods} \rhead{}
+%
+\cfoot{Page \thepage{} of \protect\pageref*{LastPage}}
+
+\usepackage{varioref}
+\labelformat{equation}{(#1)}
+
+% \usepackage{hyperref} must almost always be LAST \usepackage in
+% preamble. Otherwise, you may get strange compilation errors!
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+
+
+\begin{document}
+
+\section{First section}
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=5, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0374 &  0.0279 &  0.0251 &  0.0375 \\
+Estimated magnitude DWI & 0.0498 &  0.0355 &  0.0286 &  0.0396 \\
+Mean ODF & 0.1490 &  0.1351 &  0.1164 &  0.1136 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 9.5079 &  1.9242 &  1.6982 &  2.6055 \\
+Estimated magnitude DWI & 16.2088 &  3.2134 &  1.8802 &  2.9342 \\
+Mean ODF & 17.1347 &  2.1100 &  1.3313 &  3.7569 \\ 
+Real ODF & 2.3505 &  0.8055 &  1.0456 &  0.0454 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=5, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0355 &  0.0268 &  0.0317 &  0.0306 \\
+Estimated magnitude DWI & 0.0425 &  0.0467 &  0.0177 &  0.0797 \\
+Mean ODF & 0.4620 &  0.3927 &  0.3599 &  0.3490 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 12.3459 &  1.3529 &  1.9497 &  0.3118 \\
+Estimated magnitude DWI & 17.1379 &  5.3381 &  1.4139 &  4.6043 \\
+Mean ODF & 21.6230 &  9.8501 &  4.5578 &  1.5677 \\ 
+Real ODF & 7.5489 &  1.4533 &  0.5905 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=10, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0193 &  0.0245 &  0.0174 &  0.0178 \\
+Estimated magnitude DWI & 0.0215 &  0.0237 &  0.0159 &  0.0184 \\
+Mean ODF & 0.0570 &  0.0531 &  0.0519 &  0.0421 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.8578 &  0.7989 &  1.6672 &  1.3390 \\
+Estimated magnitude DWI & 0.7066 &  0.6873 &  1.8626 &  1.2904 \\
+Mean ODF & 0.7664 &  0.7598 &  0.6173 &  1.2376 \\ 
+Real ODF & 2.3505 &  0.8055 &  1.0456 &  0.0454 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=10, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0166 &  0.0148 &  0.0110 &  0.0048 \\
+Estimated magnitude DWI & 0.0186 &  0.0354 &  0.0060 &  0.0022 \\
+Mean ODF & 0.3015 &  0.2406 &  0.1832 &  0.1760 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 8.2643 &  1.3071 &  0.9532 &  0.0729 \\
+Estimated magnitude DWI & 8.6019 &  5.1897 &  0.2252 &  0.0000 \\
+Mean ODF & 20.0920 &  9.1979 &  3.1785 &  0.8610 \\ 
+Real ODF & 7.5489 &  1.4533 &  0.5905 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=25, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0059 &  0.0074 &  0.0081 &  0.0069 \\
+Estimated magnitude DWI & 0.0060 &  0.0075 &  0.0081 &  0.0071 \\
+Mean ODF & 0.0127 &  0.0127 &  0.0171 &  0.0132 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 2.6543 &  1.3017 &  0.7573 &  0.3469 \\
+Estimated magnitude DWI & 2.6584 &  1.2577 &  0.7687 &  0.3605 \\
+Mean ODF & 2.6529 &  1.0163 &  0.7414 &  0.3301 \\ 
+Real ODF & 2.3505 &  0.8055 &  1.0456 &  0.0454 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=25, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0025 &  0.0062 &  0.0036 &  0.0006 \\
+Estimated magnitude DWI & 0.0039 &  0.0032 &  0.0051 &  0.0001 \\
+Mean ODF & 0.0954 &  0.0543 &  0.0298 &  0.0209 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 7.6087 &  2.1309 &  0.7054 &  0.0000 \\
+Estimated magnitude DWI & 7.7855 &  1.8125 &  0.4115 &  0.0000 \\
+Mean ODF & 16.4658 &  5.2960 &  2.1091 &  0.2788 \\ 
+Real ODF & 7.5489 &  1.4533 &  0.5905 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=50, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0049 &  0.0036 &  0.0046 &  0.0032 \\
+Estimated magnitude DWI & 0.0049 &  0.0036 &  0.0046 &  0.0032 \\
+Mean ODF & 0.0065 &  0.0040 &  0.0067 &  0.0063 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 1.9241 &  0.7201 &  1.1393 &  0.0539 \\
+Estimated magnitude DWI & 1.9216 &  0.7169 &  1.1341 &  0.0481 \\
+Mean ODF & 1.8981 &  0.6798 &  0.9238 &  0.0743 \\ 
+Real ODF & 2.3505 &  0.8055 &  1.0456 &  0.0454 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=50, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0038 &  0.0009 &  0.0019 &  0.0011 \\
+Estimated magnitude DWI & 0.0040 &  0.0007 &  0.0019 &  0.0011 \\
+Mean ODF & 0.0302 &  0.0183 &  0.0113 &  0.0073 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 7.7453 &  1.5348 &  0.7248 &  0.0000 \\
+Estimated magnitude DWI & 7.7586 &  1.5112 &  0.7142 &  0.0000 \\
+Mean ODF & 11.6466 &  3.3246 &  1.2356 &  0.3454 \\ 
+Real ODF & 7.5489 &  1.4533 &  0.5905 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=100, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0021 &  0.0021 &  0.0013 &  0.0016 \\
+Estimated magnitude DWI & 0.0021 &  0.0021 &  0.0013 &  0.0016 \\
+Mean ODF & 0.0021 &  0.0021 &  0.0026 &  0.0021 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 2.3672 &  0.8874 &  1.0600 &  0.0427 \\
+Estimated magnitude DWI & 2.3602 &  0.8890 &  1.0588 &  0.0445 \\
+Mean ODF & 2.3676 &  0.8894 &  0.9834 &  0.0499 \\ 
+Real ODF & 2.3505 &  0.8055 &  1.0456 &  0.0454 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.3, 0.7], SNR=100, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0012 &  0.0009 &  0.0006 &  0.0007 \\
+Estimated magnitude DWI & 0.0014 &  0.0008 &  0.0006 &  0.0008 \\
+Mean ODF & 0.0056 &  0.0065 &  0.0033 &  0.0015 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 7.5268 &  1.4440 &  0.6311 &  0.0000 \\
+Estimated magnitude DWI & 7.5175 &  1.4253 &  0.6333 &  0.0000 \\
+Mean ODF & 8.3893 &  2.1992 &  0.8113 &  0.0905 \\ 
+Real ODF & 7.5489 &  1.4533 &  0.5905 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=5, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0422 &  0.0324 &  0.0421 &  0.0286 \\
+Estimated magnitude DWI & 0.0476 &  0.0471 &  0.0565 &  0.0312 \\
+Mean ODF & 0.1506 &  0.1397 &  0.1101 &  0.1066 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 2.2147 &  1.5248 &  1.1929 &  1.2572 \\
+Estimated magnitude DWI & 5.9684 &  3.6049 &  0.5449 &  0.9307 \\
+Mean ODF & 12.6664 &  1.5737 &  1.4061 &  0.9570 \\ 
+Real ODF & 1.4188 &  0.7287 &  0.9509 &  0.0410 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=5, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0567 &  0.0213 &  0.0225 &  0.0184 \\
+Estimated magnitude DWI & 0.0508 &  0.0216 &  0.0192 &  0.0156 \\
+Mean ODF & 0.4547 &  0.3847 &  0.3289 &  0.3181 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 8.1768 &  2.4695 &  1.5672 &  1.0190 \\
+Estimated magnitude DWI & 13.4020 &  3.1005 &  2.0663 &  0.7242 \\
+Mean ODF & 15.7458 &  7.6367 &  4.6505 &  1.8161 \\ 
+Real ODF & 5.3529 &  0.8587 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=10, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0203 &  0.0117 &  0.0201 &  0.0136 \\
+Estimated magnitude DWI & 0.0238 &  0.0104 &  0.0201 &  0.0146 \\
+Mean ODF & 0.0560 &  0.0525 &  0.0460 &  0.0443 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 2.4942 &  0.6949 &  1.5500 &  1.2275 \\
+Estimated magnitude DWI & 2.6709 &  0.4529 &  1.6369 &  1.4555 \\
+Mean ODF & 2.5472 &  0.8499 &  1.2774 &  1.6199 \\ 
+Real ODF & 1.4188 &  0.7287 &  0.9509 &  0.0410 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+  \caption{Weights=[0.4, 0.6], SNR=10, $b$-value=3000}
+  \begin{center}
+    \begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+      \multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+      \backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+      Mean complex DWI & 0.0122 &  0.0010 &  0.0099 &  0.0025 \\
+      Estimated magnitude DWI & 0.0210 &  0.0111 &  0.0143 &  0.0052 \\
+      Mean ODF & 0.3020 &  0.2184 &  0.1744 &  0.1579 \\ \hline
+    \end{tabular*}
+    \begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+      \multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+      \backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+      Mean complex DWI & 6.4851 &  0.8587 &  0.6541 &  0.0000 \\
+      Estimated magnitude DWI & 9.9844 &  1.2576 &  0.7147 &  0.1135 \\
+      Mean ODF & 19.2876 &  4.0246 &  2.2308 &  0.9365 \\ 
+      Real ODF & 5.3529 &  0.8587 &  0.2252 &  0.0000 \\\hline
+    \end{tabular*}
+  \end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=25, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0092 &  0.0064 &  0.0091 &  0.0090 \\
+Estimated magnitude DWI & 0.0095 &  0.0068 &  0.0090 &  0.0088 \\
+Mean ODF & 0.0149 &  0.0140 &  0.0178 &  0.0141 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.7277 &  0.5678 &  0.9531 &  0.2436 \\
+Estimated magnitude DWI & 0.6773 &  0.5641 &  0.9529 &  0.2330 \\
+Mean ODF & 0.5001 &  0.3662 &  0.6405 &  0.2044 \\ 
+Real ODF & 1.4188 &  0.7287 &  0.9509 &  0.0410 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=25, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0111 &  0.0005 &  0.0030 &  0.0010 \\
+Estimated magnitude DWI & 0.0160 &  0.0007 &  0.0030 &  0.0011 \\
+Mean ODF & 0.0870 &  0.0451 &  0.0302 &  0.0164 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 3.3619 &  0.8908 &  0.3638 &  0.0000 \\
+Estimated magnitude DWI & 3.7103 &  0.9063 &  0.3476 &  0.0000 \\
+Mean ODF & 9.0582 &  2.5745 &  1.1581 &  0.4352 \\ 
+Real ODF & 5.3529 &  0.8587 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=50, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0047 &  0.0039 &  0.0025 &  0.0032 \\
+Estimated magnitude DWI & 0.0048 &  0.0038 &  0.0026 &  0.0032 \\
+Mean ODF & 0.0062 &  0.0045 &  0.0066 &  0.0067 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 1.4551 &  0.7944 &  0.9880 &  0.1958 \\
+Estimated magnitude DWI & 1.4627 &  0.7878 &  0.9896 &  0.1945 \\
+Mean ODF & 1.4285 &  0.7287 &  0.8088 &  0.1863 \\ 
+Real ODF & 1.4188 &  0.7287 &  0.9509 &  0.0410 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=50, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0052 &  0.0001 &  0.0020 &  0.0006 \\
+Estimated magnitude DWI & 0.0023 &  0.0001 &  0.0020 &  0.0006 \\
+Mean ODF & 0.0224 &  0.0088 &  0.0088 &  0.0041 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 6.2046 &  0.8587 &  0.2252 &  0.0000 \\
+Estimated magnitude DWI & 5.4001 &  0.8587 &  0.2252 &  0.0000 \\
+Mean ODF & 7.0011 &  1.5714 &  0.4018 &  0.1472 \\ 
+Real ODF & 5.3529 &  0.8587 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=100, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0016 &  0.0021 &  0.0021 &  0.0018 \\
+Estimated magnitude DWI & 0.0016 &  0.0021 &  0.0021 &  0.0018 \\
+Mean ODF & 0.0021 &  0.0022 &  0.0028 &  0.0023 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 1.3065 &  0.7797 &  1.0124 &  0.0942 \\
+Estimated magnitude DWI & 1.3100 &  0.7809 &  1.0127 &  0.0936 \\
+Mean ODF & 1.3059 &  0.7788 &  0.9279 &  0.1015 \\ 
+Real ODF & 1.4188 &  0.7287 &  0.9509 &  0.0410 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.4, 0.6], SNR=100, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0010 &  0.0002 &  0.0008 &  0.0000 \\
+Estimated magnitude DWI & 0.0005 &  0.0002 &  0.0009 &  0.0000 \\
+Mean ODF & 0.0030 &  0.0024 &  0.0039 &  0.0013 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 5.1977 &  0.8587 &  0.2252 &  0.0000 \\
+Estimated magnitude DWI & 5.4243 &  0.8587 &  0.2252 &  0.0000 \\
+Mean ODF & 5.2920 &  1.0251 &  0.3650 &  0.0679 \\ 
+Real ODF & 5.3529 &  0.8587 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=5, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0582 &  0.0239 &  0.0352 &  0.0325 \\
+Estimated magnitude DWI & 0.0687 &  0.0619 &  0.0443 &  0.0361 \\
+Mean ODF & 0.1563 &  0.1296 &  0.1174 &  0.1121 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 7.6098 &  1.1981 &  0.5690 &  1.3630 \\
+Estimated magnitude DWI & 7.6644 &  1.5809 &  0.8294 &  2.1524 \\
+Mean ODF & 9.4321 &  1.3557 &  1.2649 &  2.2415 \\ 
+Real ODF & 0.7470 &  0.7600 &  0.8990 &  0.0417 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=5, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0251 &  0.0199 &  0.0163 &  0.0207 \\
+Estimated magnitude DWI & 0.1186 &  0.0219 &  0.0503 &  0.0291 \\
+Mean ODF & 0.4597 &  0.3782 &  0.3154 &  0.3162 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 3.1341 &  0.5198 &  0.4464 &  0.7784 \\
+Estimated magnitude DWI & 25.3033 &  1.3109 &  2.5528 &  0.1678 \\
+Mean ODF & 26.2935 &  3.2991 &  2.3906 &  1.7632 \\ 
+Real ODF & 4.5121 &  0.9705 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=10, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0190 &  0.0123 &  0.0153 &  0.0296 \\
+Estimated magnitude DWI & 0.0209 &  0.0121 &  0.0166 &  0.0300 \\
+Mean ODF & 0.0524 &  0.0492 &  0.0443 &  0.0422 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.6656 &  1.8363 &  0.8077 &  1.2796 \\
+Estimated magnitude DWI & 0.8260 &  1.6871 &  0.9409 &  1.1671 \\
+Mean ODF & 0.5161 &  1.5583 &  0.3980 &  0.8796 \\ 
+Real ODF & 0.7470 &  0.7600 &  0.8990 &  0.0417 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=10, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0054 &  0.0058 &  0.0142 &  0.0041 \\
+Estimated magnitude DWI & 0.0284 &  0.0058 &  0.0107 &  0.0100 \\
+Mean ODF & 0.2990 &  0.2241 &  0.1738 &  0.1499 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 4.6343 &  0.8538 &  0.2716 &  0.0000 \\
+Estimated magnitude DWI & 4.7433 &  0.9824 &  0.1406 &  0.4886 \\
+Mean ODF & 5.4108 &  0.7428 &  1.6392 &  0.6969 \\ 
+Real ODF & 4.5121 &  0.9705 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=25, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0096 &  0.0095 &  0.0055 &  0.0085 \\
+Estimated magnitude DWI & 0.0100 &  0.0101 &  0.0052 &  0.0086 \\
+Mean ODF & 0.0171 &  0.0178 &  0.0157 &  0.0161 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.3710 &  0.5737 &  0.8454 &  0.3946 \\
+Estimated magnitude DWI & 0.4177 &  0.5709 &  0.8335 &  0.4262 \\
+Mean ODF & 0.3685 &  0.4225 &  0.5348 &  0.3387 \\ 
+Real ODF & 0.7470 &  0.7600 &  0.8990 &  0.0417 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=25, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0058 &  0.0026 &  0.0023 &  0.0008 \\
+Estimated magnitude DWI & 0.0115 &  0.0022 &  0.0032 &  0.0008 \\
+Mean ODF & 0.0998 &  0.0426 &  0.0211 &  0.0158 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 4.4891 &  0.8587 &  0.2252 &  0.0000 \\
+Estimated magnitude DWI & 4.3271 &  0.8636 &  0.2252 &  0.0000 \\
+Mean ODF & 4.6028 &  0.7885 &  0.3749 &  0.4545 \\ 
+Real ODF & 4.5121 &  0.9705 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=50, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0035 &  0.0034 &  0.0036 &  0.0033 \\
+Estimated magnitude DWI & 0.0036 &  0.0034 &  0.0035 &  0.0033 \\
+Mean ODF & 0.0078 &  0.0057 &  0.0071 &  0.0057 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.6820 &  0.7886 &  0.8062 &  0.0742 \\
+Estimated magnitude DWI & 0.7014 &  0.7825 &  0.8042 &  0.0757 \\
+Mean ODF & 0.6038 &  0.7273 &  0.6871 &  0.0784 \\ 
+Real ODF & 0.7470 &  0.7600 &  0.8990 &  0.0417 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=50, $b$-value=3000}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0096 &  0.0023 &  0.0012 &  0.0040 \\
+Estimated magnitude DWI & 0.0112 &  0.0022 &  0.0010 &  0.0041 \\
+Mean ODF & 0.0176 &  0.0089 &  0.0090 &  0.0053 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 4.3940 &  0.8759 &  0.1963 &  0.0000 \\
+Estimated magnitude DWI & 4.3776 &  0.8901 &  0.2035 &  0.0000 \\
+Mean ODF & 3.8459 &  0.8083 &  0.2360 &  0.1589 \\ 
+Real ODF & 4.5121 &  0.9705 &  0.2252 &  0.0000 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Weights=[0.5, 0.5], SNR=100, $b$-value=1500}
+\begin{center}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.0022 &  0.0021 &  0.0022 &  0.0022 \\
+Estimated magnitude DWI & 0.0022 &  0.0021 &  0.0022 &  0.0022 \\
+Mean ODF & 0.0029 &  0.0022 &  0.0019 &  0.0030 \\ \hline
+\end{tabular*}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+\multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+\backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+Mean complex DWI & 0.6057 &  0.7941 &  0.8969 &  0.0674 \\
+Estimated magnitude DWI & 0.5979 &  0.7932 &  0.8952 &  0.0674 \\
+Mean ODF & 0.5694 &  0.7882 &  0.8467 &  0.0621 \\ 
+Real ODF & 0.7470 &  0.7600 &  0.8990 &  0.0417 \\\hline
+\end{tabular*}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+  \caption{Weights=[0.5, 0.5], SNR=100, $b$-value=3000}
+  \begin{center}
+    \begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+      \multicolumn{5}{c}{\textbf{Fisher-Rao distances to the real ODF}}\\ \hline
+      \backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+      Mean complex DWI & 0.0016 &  0.0005 &  0.0001 &  0.0002 \\
+      Estimated magnitude DWI & 0.0015 &  0.0004 &  0.0001 &  0.0002 \\
+      Mean ODF & 0.0018 &  0.0015 &  0.0023 &  0.0013 \\ \hline
+    \end{tabular*}
+    \begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l |*{4}{c}}
+      \multicolumn{5}{c}{\textbf{Direction deviation}}\\ \hline
+      \backslashbox{Methods}{Separating angles} & $45^{\circ}$ & $60^{\circ}$ & $75^{\circ}$ & $90^{\circ}$ \\ \hline
+      Mean complex DWI & 4.5912 &  0.9920 &  0.2252 &  0.0000 \\
+      Estimated magnitude DWI & 4.5925 &  0.9915 &  0.2252 &  0.0000 \\
+      Mean ODF & 4.3899 &  1.0330 &  0.1584 &  0.0609 \\ 
+      Real ODF & 4.5121 &  0.9705 &  0.2252 &  0.0000 \\\hline
+    \end{tabular*}
+  \end{center}
+\end{table}
+
+
+\end{document}

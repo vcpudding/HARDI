@@ -1,0 +1,50 @@
+function filteredImg = dwiAnisotropicFitlering (noisyImg, stdDeviation, conductance, priorWeight, tolerance)
+
+%initialize
+filteredImg = noisyImg;
+[gridX, gridY, gridZ] = meshgrid(1:size(noisyImg,1), 1:size(noisyImg,2), 1:size(noisyImg,3));
+sqStdDeviation = stdDeviation^2;
+logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
+
+%gradient descent
+while 1
+    lastLogPost = logPost;
+    
+    x = filteredImg.*noisyImg/sqStdDeviation;
+    B = -filteredImg/sqStdDeviation + besseli(1,x,1)./besseli(0,x,1).*noisyImg/sqStdDeviation;
+    [imgGradX, imgGradY, imgGradZ] = vectorGradient(filteredImg);
+    imgGradSqNorm = imgGradX.
+    c = exp(-imgGradSqNorm/conductance);
+    P = divergence(gridX, gridY, gridZ, c.*imgGradX, c.*imgGradY, c.*imgGradZ);
+    
+    step = 1e-3;
+    filteredImg = filteredImg + step*(B+priorWeight*P);
+    
+    logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
+    disp(logPost);
+    if abs(logPost-lastLogPost)<tolerance
+        break;
+    end;
+    
+end
+
+%output
+return;
+
+end
+
+function p = logPosterior(filteredImg, noisyImg, sqStdDeviation, conductance, priorWeight)
+
+z = filteredImg.*noisyImg/sqStdDeviation;
+p1 = log(noisyImg/sqStdDeviation)-(filteredImg.^2+noisyImg.^2)/2/sqStdDeviation+log(besseli(0,z,1))+abs(z);
+p1 = sum(sum(sum(p1)));
+
+[imgGradX, imgGradY, imgGradZ] = gradient(filteredImg);
+imgGradSqNorm = imgGradX.^2 + imgGradY.^2 + imgGradZ.^2;
+E = priorWeight*sum(sum(sum(exp(-imgGradSqNorm/conductance))));
+p2 = 1/(1-exp(-priorWeight*numel(noisyImg))) * exp(-E);
+
+% p = p1+p2;
+p = p1;
+
+end

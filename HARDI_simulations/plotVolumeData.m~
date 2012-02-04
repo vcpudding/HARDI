@@ -1,0 +1,16 @@
+function plotVolumeData (volDat, nSlicePerColumn, nSlicePerRow)
+
+nSlices = size(volDat,3);
+nSlice
+addpath('SubAxis');
+
+set(gcf, 'colormap', gray);
+ratio = length(colormap)/max(max(max(volDat)));
+for i=1:nSlices
+    if mod(i, nSlicePerRow*nSlicePerColumn)==1
+        figure;
+    end
+    subaxis(nSlicePerColumn, nSlicePerRow, mod(i-1
+end
+
+end

@@ -1,0 +1,43 @@
+function compareDWI_FR (weight, sepAngle, snr, bVal)
+
+%load GradientOrientations_64
+UnitVectors
+order=4;
+G=constructMatrixOfMonomials(g,order);
+
+fileName = sprintf('SimData/Data [Weight=(%0.1f, %0.1f)][sepAngle=%d][SNR=%d][bVal=%d].mat', weight(1), weight(2), sepAngle, snr, bVal);
+load(fileName);
+
+real_ODF=G*real_ODF_coef;
+mean_ODF_avrDWI=G*mean_ODF_coef_avrDWI;
+mean_ODF_FR=G*mean_ODF_coef_FR;
+
+GFA_real = GFA(real_ODF);
+GFA_avrDWI = GFA(mean_ODF_avrDWI);
+GFA_FR = GFA(mean_ODF_FR);
+
+dFR_avrDWI = acos(sqrt(mean_ODF_avrDWI)'*sqrt(real_ODF));
+dFR_FR = acos(sqrt(mean_ODF_FR)'*sqrt(real_ODF));
+
+%disp(GFA_real, GFA_avrDWI, GFA_FR);
+%disp(dFR_avrDWI, dFR_FR);
+figure;
+title('Real ODF'); 
+subplot(1,3,1); plotTensors(real_ODF_coef, 0, [321,1,0.2]);
+subplot(1,3,2); plotTensors(mean_ODF_coef_avrDWI, 1, [321,1,0.2]);
+subplot(1,3,3); plotTensors(mean_ODF_coef_FR, 1, [321,1,0.2]);
+
+% Create a brand new figure.
+figure;
+% Thanks to Steve Lord for the docking tip earlier today.
+set(gcf, 'WindowStyle', 'Docked');
+% Make 8 subplots on that figure.
+for sp = 1 : 8
+data = rand(5,1); % Make random data.
+subplot(3,3,sp);
+plot(data, 'bo-');
+caption = sprintf('Plot #%d on figure %d', sp, figNumber);
+title(caption, 'FontSize', 14);
+end
+
+end

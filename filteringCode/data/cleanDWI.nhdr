@@ -1,0 +1,25 @@
+NRRD0005
+# Complete NRRD file format specification at:
+# http://teem.sourceforge.net/nrrd/format.html
+content: (double)(crop(/(+(+(+(testing,testing),testing),testing),4),[33,97]x[50,82]x[0,45]x[0,6]))
+type: double
+dimension: 4
+space: left-posterior-superior
+sizes: 65 33 46 7
+space directions: (2,0,0) (0,-2,0) (0,0,-2) none
+centerings: cell cell cell ???
+kinds: space space space list
+endian: big
+encoding: raw
+space units: "mm" "mm" "mm"
+measurement frame: (1,0,0) (0,1,0) (0,0,1)
+data file: cleanDWI.raw
+modality:=DWMRI
+DWMRI_b-value:=1000
+DWMRI_gradient_0000:=0 0 0
+DWMRI_gradient_0001:=1 0 1
+DWMRI_gradient_0002:=-1 0 1
+DWMRI_gradient_0003:=0 1 1
+DWMRI_gradient_0004:=0 1 -1
+DWMRI_gradient_0005:=1 1 0
+DWMRI_gradient_0006:=-1 1 0

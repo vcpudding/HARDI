@@ -1,0 +1,3350 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=prv_comparison1 2012.1.24)  24 JAN 2012 16:50
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**&prv_comparison1 _region_.tex
+(./_region_.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, arabic, armenian
+, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutch, u
+kenglish, usenglishmax, esperanto, estonian, farsi, finnish, french, galician, 
+german, ngerman, swissgerman, monogreek, greek, hungarian, icelandic, assamese,
+ bengali, gujarati, hindi, kannada, malayalam, marathi, oriya, panjabi, tamil, 
+telugu, indonesian, interlingua, irish, italian, kurmanji, lao, latin, latvian,
+ lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, polish, portuguese, roma
+nian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turkish,
+ turkmen, ukrainian, uppersorbian, welsh, loaded.
+CUSTOMISED FORMAT. Preloaded files:
+        .
+ article.cls    2007/10/19 v1.4h Standard LaTeX document class
+  size10.clo    2007/10/19 v1.4h Standard LaTeX file (size option)
+geometry.sty    2010/07/13 v5.5 Page Geometry
+  keyval.sty    1999/03/16 v1.13 key=value parser (DPC)
+   ifpdf.sty    2010/01/28 v2.1 Provides the ifpdf switch (HO)
+  ifvtex.sty    2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+enumitem.sty    2009/05/18 v2.2 Customized lists
+mathptmx.sty    2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+graphicx.sty    1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+graphics.sty    2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+    trig.sty    1999/03/16 v1.09 sin cos tan (DPC)
+graphics.cfg    2010/04/23 v1.9 graphics configuration of TeX Live
+  pdftex.def    2010/02/14 v0.04n Graphics/color for pdfTeX
+   times.sty    2005/04/12 PSNFSS-v9.2a (SPQR) 
+ comment.sty    
+ amstext.sty    2000/06/29 v2.01
+  amsgen.sty    1999/11/30 v2.0
+ amsmath.sty    2000/07/18 v2.13 AMS math features
+  amsbsy.sty    1999/11/29 v1.2d
+  amsopn.sty    1999/12/14 v2.01 operator names
+ amssymb.sty    2009/06/22 v3.00
+amsfonts.sty    2009/06/22 v3.00 Basic AMSFonts support
+   array.sty    2008/09/09 v2.4c Tabular extension package (FMi)
+multirow.sty    
+     url.sty    2006/04/12  ver 3.3  Verb mode for urls, etc.
+subfigure.sty    2002/03/15 v2.1.5 subfigure package
+subfigure.cfg
+  xcolor.sty    2007/01/21 v2.11 LaTeX color extensions (UK)
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+   float.sty    2001/11/08 v1.3d Float enhancements (AL)
+slashbox.sty    
+  pict2e.sty    2009/08/05 v0.2x Improved picture commands (HjG,RN,JT)
+  pict2e.cfg    2009/08/05 v0.1s pict2e configuration for teTeX/TeXLive
+p2e-pdftex.def    2009/08/05 v0.1s Driver-dependant file (RN,HjG,JT)
+    tikz.sty    2008/02/13 v2.00 (rcs-revision 1.27)
+     pgf.sty    2008/01/15 v2.00 (rcs-revision 1.12)
+  pgfrcs.sty    2008/02/20 v2.00 (rcs-revision 1.21)
+  pgfrcs.code.tex
+ pgfcore.sty    2008/01/15 v2.00 (rcs-revision 1.6)
+  pgfsys.sty    2008/02/07 v2.00 (rcs-revision 1.31)
+  pgfsys.code.tex
+pgfsyssoftpath.code.tex    2008/01/23  (rcs-revision 1.6)
+pgfsysprotocol.code.tex    2006/10/16  (rcs-revision 1.4)
+ pgfcore.code.tex
+pgfcomp-version-0-65.sty    2007/07/03 v2.00 (rcs-revision 1.7)
+pgfcomp-version-1-18.sty    2007/07/23 v2.00 (rcs-revision 1.1)
+  pgffor.sty    2007/11/07 v2.00 (rcs-revision 1.8)
+  pgffor.code.tex
+    tikz.code.tex
+fancyhdr.sty    
+lastpage.sty    1994/06/25 v0.1b LaTeX2e package for refs to last page number (
+JPG)
+varioref.sty    2009/09/13 v1.4w package for extended references (FMi)
+hyperref.sty    2010/06/18 v6.81g Hypertext links for LaTeX
+ ltxcmds.sty    2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
+kvsetkeys.sty    2010/03/01 v1.9 Key value parser (HO)
+infwarerr.sty    2010/04/08 v1.3 Providing info/warning/message (HO)
+etexcmds.sty    2010/01/28 v1.3 Prefix for e-TeX command names (HO)
+pdfescape.sty    2010/03/01 v1.9 Provides hex, PDF name and string conversions 
+(HO)
+pdftexcmds.sty    2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
+ifluatex.sty    2010/03/01 v1.3 Provides the ifluatex switch (HO)
+ ifxetex.sty    2009/01/23 v0.5 Provides ifxetex conditional
+ hycolor.sty    2009/12/12 v1.6 Color options of hyperref/bookmark (HO)
+xcolor-patch.sty    2009/12/12 xcolor patch
+letltxmacro.sty    2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
+  pd1enc.def    2010/06/18 v6.81g Hyperref: PDFDocEncoding definition (HO)
+ intcalc.sty    2007/09/27 v1.1 Expandable integer calculations (HO)
+hyperref.cfg    2002/06/06 v1.2 hyperref configuration of TeXLive
+kvoptions.sty    2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+  bitset.sty    2007/09/28 v1.0 Data type bit set (HO)
+bigintcalc.sty    2007/11/11 v1.1 Expandable big integer calculations (HO)
+atbegshi.sty    2010/03/25 v1.12 At begin shipout hook (HO)
+ hpdftex.def    2010/06/18 v6.81g Hyperref driver for pdfTeX
+atveryend.sty    2010/03/24 v1.5 Hooks at very end of document (HO)
+rerunfilecheck.sty    2010/03/16 v1.6 Rerun checks for auxiliary files (HO)
+uniquecounter.sty    2009/12/18 v1.1 Provides unlimited unique counter (HO)
+ot1ztmcm.fd    2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+omlztmcm.fd    2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+omsztmcm.fd    2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+omxztmcm.fd    2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+  ot1ptm.fd    2001/06/04 font definitions for OT1/ptm.
+    umsa.fd    2009/06/22 v3.00 AMS symbols A
+    umsb.fd    2009/06/22 v3.00 AMS symbols B
+  ot1pcr.fd    2001/06/04 font definitions for OT1/pcr.
+  ot1phv.fd    2001/06/04 scalable font definitions for OT1/phv.
+        .
+No file _region_.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+(/usr/share/texmf/tex/latex/preview/preview.sty
+Package: preview 2010/02/14 11.86 (AUCTeX/preview-latex)
+
+(/usr/share/texmf/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen179
+)
+(/usr/share/texmf/tex/latex/preview/prauctex.def
+No auxiliary output files.
+
+
+\hbadness=\count140
+\hfuzz=\dimen180
+(/usr/share/texmf/tex/latex/preview/prauctex.cfg))
+(/usr/share/texmf/tex/latex/preview/prfootnotes.def)
+\pr@snippet=\count141
+\pr@box=\box41
+\pr@output=\toks32
+
+Preview: Fontsize 10pt
+Preview: PDFoutput 1
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texmf/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 436.
+
+(/usr/share/texmf/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box42
+Package hyperref Info: Link coloring ON on input line 38.
+
+(/usr/share/texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(/usr/share/texmf/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+(/usr/share/texmf/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
+)
+\c@section@level=\count142
+LaTeX Info: Redefining \Ref on input line 498.
+)
+LaTeX Info: Redefining \ref on input line 38.
+LaTeX Info: Redefining \pageref on input line 38.
+LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \Ref on input line 38.
+
+ !name(comparison1.tex) !offset(-3) 
+! Preview: Snippet 1 started.
+<-><->
+      
+l.43 \section
+             {First section}
+Not a real error.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
+Preview: Tightpage -32891 -32891 32891 32891
+! Preview: Snippet 1 ended.(650217+13207x30785865).
+<-><->
+      
+l.43 \section{First section}
+                            
+Not a real error.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+! Preview: Snippet 2 started.
+<-><->
+      
+l.44 \begin{table}
+                  [H]
+Not a real error.
+
+! Preview: Snippet 2 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.63 \end{table}
+                
+Not a real error.
+
+[2
+
+]
+! Preview: Snippet 3 started.
+<-><->
+      
+l.66 \begin{table}
+                  [H]
+Not a real error.
+
+! Preview: Snippet 3 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.85 \end{table}
+                
+Not a real error.
+
+[3
+
+]
+! Preview: Snippet 4 started.
+<-><->
+      
+l.88 \begin{table}
+                  [H]
+Not a real error.
+
+! Preview: Snippet 4 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.107 \end{table}
+                 
+Not a real error.
+
+[4
+
+]
+! Preview: Snippet 5 started.
+<-><->
+      
+l.110 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 5 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.129 \end{table}
+                 
+Not a real error.
+
+[5
+
+]
+! Preview: Snippet 6 started.
+<-><->
+      
+l.132 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 6 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.151 \end{table}
+                 
+Not a real error.
+
+[6
+
+]
+! Preview: Snippet 7 started.
+<-><->
+      
+l.154 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 7 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.173 \end{table}
+                 
+Not a real error.
+
+[7
+
+]
+! Preview: Snippet 8 started.
+<-><->
+      
+l.176 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 8 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.195 \end{table}
+                 
+Not a real error.
+
+[8
+
+]
+! Preview: Snippet 9 started.
+<-><->
+      
+l.198 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 9 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.217 \end{table}
+                 
+Not a real error.
+
+[9
+
+]
+! Preview: Snippet 10 started.
+<-><->
+      
+l.220 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 10 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.239 \end{table}
+                 
+Not a real error.
+
+[10
+
+]
+! Preview: Snippet 11 started.
+<-><->
+      
+l.242 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 11 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.261 \end{table}
+                 
+Not a real error.
+
+[11
+
+]
+! Preview: Snippet 12 started.
+<-><->
+      
+l.264 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 12 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.283 \end{table}
+                 
+Not a real error.
+
+[12
+
+]
+! Preview: Snippet 13 started.
+<-><->
+      
+l.286 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 13 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.305 \end{table}
+                 
+Not a real error.
+
+[13
+
+]
+! Preview: Snippet 14 started.
+<-><->
+      
+l.308 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 14 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.327 \end{table}
+                 
+Not a real error.
+
+[14
+
+]
+! Preview: Snippet 15 started.
+<-><->
+      
+l.330 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 15 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.349 \end{table}
+                 
+Not a real error.
+
+[15
+
+]
+! Preview: Snippet 16 started.
+<-><->
+      
+l.352 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 16 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.371 \end{table}
+                 
+Not a real error.
+
+[16
+
+]
+! Preview: Snippet 17 started.
+<-><->
+      
+l.374 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 17 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.393 \end{table}
+                 
+Not a real error.
+
+[17
+
+]
+! Preview: Snippet 18 started.
+<-><->
+      
+l.396 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 18 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.415 \end{table}
+                 
+Not a real error.
+
+[18
+
+]
+! Preview: Snippet 19 started.
+<-><->
+      
+l.418 \begin{table}
+                   [H]
+Not a real error.
+
+! Preview: Snippet 19 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.437 \end{table}
+                 
+Not a real error.
+
+[19
+
+]
+! Preview: Snippet 20 started.
+<-><->
+      
+l.440 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.440 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.440 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.440 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 20 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.459 \end{table}
+                 
+Not a real error.
+
+[20
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.459 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.459 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.459 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.459 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.459 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra \else.
+\subfig@end@float ...penalty \@floatpenalty \else 
+                                                  \vadjust {\penalty -\@Miv ...
+l.459 \end{table}
+                 
+I'm ignoring this; it doesn't match any \if.
+
+! You can't use `\vadjust' in vertical mode.
+\subfig@end@float ...@floatpenalty \else \vadjust 
+                                                  {\penalty -\@Miv \vbox {}\...
+l.459 \end{table}
+                 
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.459 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.459 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Preview: Snippet 21 started.
+<-><->
+      
+l.462 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.462 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.462 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.462 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 21 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.481 \end{table}
+                 
+Not a real error.
+
+[21
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \@elt 
+l.481 \end{table}
+                 
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! LaTeX Error: This may be a LaTeX bug.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.481 \end{table}
+                 
+Call for help
+
+! Undefined control sequence.
+\@addmarginpar ...advance \@tempdima \ht \@marbox 
+                                                  \ifdim \@tempdima >\z@ \@l...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Bad register code (-655360).
+\@addmarginpar ...e \space moved}\else \@tempdima 
+                                                  \z@ \fi \global \@mparbott...
+l.481 \end{table}
+                 
+A register number must be between 0 and 32767.
+I changed this one to zero.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.481 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...vance \@mparbottom \dp \@marbox 
+                                                  \global \advance \@mparbot...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...dvance \@tempdima -\ht \@marbox 
+                                                  \global \setbox \@marbox \...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \global \setbox \@marbox 
+                                                  \vbox {\vskip \@tempdima \...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...\vskip \@tempdima \box \@marbox 
+                                                  }\global \ht \@marbox \z@ ...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ... \@marbox }\global \ht \@marbox 
+                                                  \z@ \global \dp \@marbox \...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.481 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \z@ \global \dp \@marbox 
+                                                  \z@ \kern -\@pagedp \noint...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.481 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...arginparwidth \fi \box \@marbox 
+                                                  \hss }\nointerlineskip \hb...
+l.481 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \hss 
+l.481 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 22 started.
+<-><->
+      
+l.484 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.484 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.484 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.484 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 22 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.503 \end{table}
+                 
+Not a real error.
+
+[22
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.503 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.503 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.503 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.503 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.503 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra \else.
+\subfig@end@float ...penalty \@floatpenalty \else 
+                                                  \vadjust {\penalty -\@Miv ...
+l.503 \end{table}
+                 
+I'm ignoring this; it doesn't match any \if.
+
+! You can't use `\vadjust' in vertical mode.
+\subfig@end@float ...@floatpenalty \else \vadjust 
+                                                  {\penalty -\@Miv \vbox {}\...
+l.503 \end{table}
+                 
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.503 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.503 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Preview: Snippet 23 started.
+<-><->
+      
+l.506 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.506 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.506 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.506 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 23 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.525 \end{table}
+                 
+Not a real error.
+
+[23
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \@elt 
+l.525 \end{table}
+                 
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! LaTeX Error: This may be a LaTeX bug.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.525 \end{table}
+                 
+Call for help
+
+! Undefined control sequence.
+\@addmarginpar ...advance \@tempdima \ht \@marbox 
+                                                  \ifdim \@tempdima >\z@ \@l...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Bad register code (-327680).
+\@addmarginpar ...e \space moved}\else \@tempdima 
+                                                  \z@ \fi \global \@mparbott...
+l.525 \end{table}
+                 
+A register number must be between 0 and 32767.
+I changed this one to zero.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.525 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...vance \@mparbottom \dp \@marbox 
+                                                  \global \advance \@mparbot...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...dvance \@tempdima -\ht \@marbox 
+                                                  \global \setbox \@marbox \...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \global \setbox \@marbox 
+                                                  \vbox {\vskip \@tempdima \...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...\vskip \@tempdima \box \@marbox 
+                                                  }\global \ht \@marbox \z@ ...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ... \@marbox }\global \ht \@marbox 
+                                                  \z@ \global \dp \@marbox \...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.525 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \z@ \global \dp \@marbox 
+                                                  \z@ \kern -\@pagedp \noint...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.525 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...arginparwidth \fi \box \@marbox 
+                                                  \hss }\nointerlineskip \hb...
+l.525 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \hss 
+l.525 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 24 started.
+<-><->
+      
+l.528 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.528 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.528 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.528 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 24 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.547 \end{table}
+                 
+Not a real error.
+
+[24
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.547 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.547 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.547 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.547 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.547 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra \else.
+\subfig@end@float ...penalty \@floatpenalty \else 
+                                                  \vadjust {\penalty -\@Miv ...
+l.547 \end{table}
+                 
+I'm ignoring this; it doesn't match any \if.
+
+! You can't use `\vadjust' in vertical mode.
+\subfig@end@float ...@floatpenalty \else \vadjust 
+                                                  {\penalty -\@Miv \vbox {}\...
+l.547 \end{table}
+                 
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.547 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.547 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Preview: Snippet 25 started.
+<-><->
+      
+l.550 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.550 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.550 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.550 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 25 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.569 \end{table}
+                 
+Not a real error.
+
+[25
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \@elt 
+l.569 \end{table}
+                 
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! LaTeX Error: This may be a LaTeX bug.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.569 \end{table}
+                 
+Call for help
+
+! Undefined control sequence.
+\@addmarginpar ...advance \@tempdima \ht \@marbox 
+                                                  \ifdim \@tempdima >\z@ \@l...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.569 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...vance \@mparbottom \dp \@marbox 
+                                                  \global \advance \@mparbot...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...dvance \@tempdima -\ht \@marbox 
+                                                  \global \setbox \@marbox \...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \global \setbox \@marbox 
+                                                  \vbox {\vskip \@tempdima \...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...\vskip \@tempdima \box \@marbox 
+                                                  }\global \ht \@marbox \z@ ...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ... \@marbox }\global \ht \@marbox 
+                                                  \z@ \global \dp \@marbox \...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.569 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \z@ \global \dp \@marbox 
+                                                  \z@ \kern -\@pagedp \noint...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.569 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...arginparwidth \fi \box \@marbox 
+                                                  \hss }\nointerlineskip \hb...
+l.569 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \hss 
+l.569 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 26 started.
+<-><->
+      
+l.572 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.572 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.572 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.572 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 26 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.591 \end{table}
+                 
+Not a real error.
+
+[26
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.591 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.591 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.591 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.591 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.591 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra \else.
+\subfig@end@float ...penalty \@floatpenalty \else 
+                                                  \vadjust {\penalty -\@Miv ...
+l.591 \end{table}
+                 
+I'm ignoring this; it doesn't match any \if.
+
+! You can't use `\vadjust' in vertical mode.
+\subfig@end@float ...@floatpenalty \else \vadjust 
+                                                  {\penalty -\@Miv \vbox {}\...
+l.591 \end{table}
+                 
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.591 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.591 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Preview: Snippet 27 started.
+<-><->
+      
+l.594 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.594 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.594 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.594 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 27 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.613 \end{table}
+                 
+Not a real error.
+
+[27
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \@elt 
+l.613 \end{table}
+                 
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! LaTeX Error: This may be a LaTeX bug.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.613 \end{table}
+                 
+Call for help
+
+! Undefined control sequence.
+\@addmarginpar ...advance \@tempdima \ht \@marbox 
+                                                  \ifdim \@tempdima >\z@ \@l...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \protect 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: Marginpar on page 1 moved.
+
+! Undefined control sequence.
+\@addmarginpar ...vance \@mparbottom \dp \@marbox 
+                                                  \global \advance \@mparbot...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...dvance \@tempdima -\ht \@marbox 
+                                                  \global \setbox \@marbox \...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \global \setbox \@marbox 
+                                                  \vbox {\vskip \@tempdima \...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...\vskip \@tempdima \box \@marbox 
+                                                  }\global \ht \@marbox \z@ ...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ... \@marbox }\global \ht \@marbox 
+                                                  \z@ \global \dp \@marbox \...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.613 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \z@ \global \dp \@marbox 
+                                                  \z@ \kern -\@pagedp \noint...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.613 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...arginparwidth \fi \box \@marbox 
+                                                  \hss }\nointerlineskip \hb...
+l.613 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \hss 
+l.613 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 28 started.
+<-><->
+      
+l.616 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.616 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.616 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.616 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 28 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.635 \end{table}
+                 
+Not a real error.
+
+[28
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.635 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.635 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.635 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.635 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.635 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra \else.
+\subfig@end@float ...penalty \@floatpenalty \else 
+                                                  \vadjust {\penalty -\@Miv ...
+l.635 \end{table}
+                 
+I'm ignoring this; it doesn't match any \if.
+
+! You can't use `\vadjust' in vertical mode.
+\subfig@end@float ...@floatpenalty \else \vadjust 
+                                                  {\penalty -\@Miv \vbox {}\...
+l.635 \end{table}
+                 
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.635 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.635 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Preview: Snippet 29 started.
+<-><->
+      
+l.638 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.638 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.638 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.638 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 29 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.657 \end{table}
+                 
+Not a real error.
+
+[29
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \@elt 
+l.657 \end{table}
+                 
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! LaTeX Error: This may be a LaTeX bug.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.657 \end{table}
+                 
+Call for help
+
+! Undefined control sequence.
+\@addmarginpar ...advance \@tempdima \ht \@marbox 
+                                                  \ifdim \@tempdima >\z@ \@l...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \protect 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: Marginpar on page 1 moved.
+
+! Undefined control sequence.
+\@addmarginpar ...vance \@mparbottom \dp \@marbox 
+                                                  \global \advance \@mparbot...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...dvance \@tempdima -\ht \@marbox 
+                                                  \global \setbox \@marbox \...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \global \setbox \@marbox 
+                                                  \vbox {\vskip \@tempdima \...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...\vskip \@tempdima \box \@marbox 
+                                                  }\global \ht \@marbox \z@ ...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ... \@marbox }\global \ht \@marbox 
+                                                  \z@ \global \dp \@marbox \...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.657 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \z@ \global \dp \@marbox 
+                                                  \z@ \kern -\@pagedp \noint...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.657 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...arginparwidth \fi \box \@marbox 
+                                                  \hss }\nointerlineskip \hb...
+l.657 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \hss 
+l.657 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 30 started.
+<-><->
+      
+l.660 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.660 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.660 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.660 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 30 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.679 \end{table}
+                 
+Not a real error.
+
+[30
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.679 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.679 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.679 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.679 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.679 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra \else.
+\subfig@end@float ...penalty \@floatpenalty \else 
+                                                  \vadjust {\penalty -\@Miv ...
+l.679 \end{table}
+                 
+I'm ignoring this; it doesn't match any \if.
+
+! You can't use `\vadjust' in vertical mode.
+\subfig@end@float ...@floatpenalty \else \vadjust 
+                                                  {\penalty -\@Miv \vbox {}\...
+l.679 \end{table}
+                 
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Argument of \@xnext has an extra }.
+<inserted text> 
+                \par 
+l.679 \end{table}
+                 
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@currbox \@currlist \ifnum \count \@currbox >\z@ \advance \@pageht \@pagedp \E
+TC.
+! Paragraph ended before \@xnext was complete.
+<to be read again> 
+                   \par 
+l.679 \end{table}
+                 
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Preview: Snippet 31 started.
+<-><->
+      
+l.682 \begin{table}
+                   [H]
+Not a real error.
+
+
+! LaTeX Error: Too many unprocessed floats.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.682 \begin{table}[H]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.682 \begin{table}[H]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.682 \begin{table}[H]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Preview: Snippet 31 ended.(9132430+2627993x30785865).
+<-><->
+      
+l.701 \end{table}
+                 
+Not a real error.
+
+[31
+
+]
+! Undefined control sequence.
+\@largefloatcheck ->\ifdim \ht \@currbox 
+                                         >\textheight \@tempdima -\textheigh...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> \@currbox 
+                     
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \@elt 
+l.701 \end{table}
+                 
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \@elt 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! LaTeX Error: This may be a LaTeX bug.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.701 \end{table}
+                 
+Call for help
+
+! Undefined control sequence.
+\@addmarginpar ...advance \@tempdima \ht \@marbox 
+                                                  \ifdim \@tempdima >\z@ \@l...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \protect 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: Marginpar on page 1 moved.
+
+! Undefined control sequence.
+\@addmarginpar ...vance \@mparbottom \dp \@marbox 
+                                                  \global \advance \@mparbot...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...dvance \@tempdima -\ht \@marbox 
+                                                  \global \setbox \@marbox \...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \global \setbox \@marbox 
+                                                  \vbox {\vskip \@tempdima \...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...\vskip \@tempdima \box \@marbox 
+                                                  }\global \ht \@marbox \z@ ...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ... \@marbox }\global \ht \@marbox 
+                                                  \z@ \global \dp \@marbox \...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \global 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \global 
+l.701 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...marbox \z@ \global \dp \@marbox 
+                                                  \z@ \kern -\@pagedp \noint...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \kern 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \kern 
+l.701 \end{table}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\@addmarginpar ...arginparwidth \fi \box \@marbox 
+                                                  \hss }\nointerlineskip \hb...
+l.701 \end{table}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \hss 
+l.701 \end{table}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+ !name(comparison1.tex) !offset(-5)  AED: lastpage setting LastPage
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 706.
+
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 706.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 706.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 706.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 706.
+
+LaTeX Warning: There were undefined references.
+
+ )
+(\end occurred when \ifnum on line 679 was incomplete)
+(\end occurred when \ifnum on line 679 was incomplete)
+(\end occurred when \ifx on line 679 was incomplete)
+(\end occurred when \ifnum on line 679 was incomplete)
+(\end occurred when \ifnum on line 679 was incomplete)
+(\end occurred when \ifnum on line 679 was incomplete)
+(\end occurred when \ifnum on line 679 was incomplete)
+(\end occurred when \ifnum on line 679 was incomplete)
+(\end occurred when \ifnum on line 635 was incomplete)
+(\end occurred when \ifnum on line 635 was incomplete)
+(\end occurred when \ifx on line 635 was incomplete)
+(\end occurred when \ifnum on line 635 was incomplete)
+(\end occurred when \ifnum on line 635 was incomplete)
+(\end occurred when \ifnum on line 635 was incomplete)
+(\end occurred when \ifnum on line 635 was incomplete)
+(\end occurred when \ifnum on line 635 was incomplete)
+(\end occurred when \ifnum on line 591 was incomplete)
+(\end occurred when \ifnum on line 591 was incomplete)
+(\end occurred when \ifx on line 591 was incomplete)
+(\end occurred when \ifnum on line 591 was incomplete)
+(\end occurred when \ifnum on line 591 was incomplete)
+(\end occurred when \ifnum on line 591 was incomplete)
+(\end occurred when \ifnum on line 591 was incomplete)
+(\end occurred when \ifnum on line 591 was incomplete)
+(\end occurred when \ifnum on line 547 was incomplete)
+(\end occurred when \ifnum on line 547 was incomplete)
+(\end occurred when \ifx on line 547 was incomplete)
+(\end occurred when \ifnum on line 547 was incomplete)
+(\end occurred when \ifnum on line 547 was incomplete)
+(\end occurred when \ifnum on line 547 was incomplete)
+(\end occurred when \ifnum on line 547 was incomplete)
+(\end occurred when \ifnum on line 547 was incomplete)
+(\end occurred when \ifnum on line 503 was incomplete)
+(\end occurred when \ifnum on line 503 was incomplete)
+(\end occurred when \ifx on line 503 was incomplete)
+(\end occurred when \ifnum on line 503 was incomplete)
+(\end occurred when \ifnum on line 503 was incomplete)
+(\end occurred when \ifnum on line 503 was incomplete)
+(\end occurred when \ifnum on line 503 was incomplete)
+(\end occurred when \ifnum on line 503 was incomplete)
+(\end occurred when \ifnum on line 459 was incomplete)
+(\end occurred when \ifnum on line 459 was incomplete)
+(\end occurred when \ifx on line 459 was incomplete)
+(\end occurred when \ifnum on line 459 was incomplete)
+(\end occurred when \ifnum on line 459 was incomplete)
+(\end occurred when \ifnum on line 459 was incomplete)
+(\end occurred when \ifnum on line 459 was incomplete)
+(\end occurred when \ifnum on line 459 was incomplete) 
+Here is how much of TeX's memory you used:
+ 506 strings out of 481037
+ 7759 string characters out of 2945229
+ 294984 words of memory out of 3500000
+ 16113 multiletter control sequences out of 15000+200000
+ 23875 words of font info for 56 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 29i,15n,29p,188b,381s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/e
+nc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/ty
+pe1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
+Output written on _region_.pdf (31 pages, 63115 bytes).
+PDF statistics:
+ 166 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

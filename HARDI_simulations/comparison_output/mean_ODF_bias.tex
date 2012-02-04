@@ -1,0 +1,62 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[shortlabels]{enumitem}
+\setcounter{secnumdepth}{4}
+
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{comment}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{slashbox}
+\usepackage{pict2e}
+
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
+
+\usepackage{fancyhdr, lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+%
+\lhead{}
+\chead{Fisher-Rao mean ODF bias analysis}
+\rhead{}
+%
+\cfoot{Page \thepage{} of \protect\pageref*{LastPage}}
+
+\usepackage{varioref}
+\labelformat{equation}{(#1)}
+
+% \usepackage{hyperref} must almost always be LAST \usepackage in
+% preamble. Otherwise, you may get strange compilation errors!
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+
+\begin{document}
+
+\section{The plot of residual V.S. the number of repititions}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{mean_odf_bias.eps}
+  \caption{Residual of the mean ODF to the real ODF.}
+\end{figure}
+
+\begin{equation}
+\text{Residual}=\left\|\mathrm{E}[\log_{\psi_{real}}{\hat{\psi}}]\right\|_2
+=\left\|\frac{1}{K}\sum_{i=1}^K\log_{\psi_{real}}{\hat{\psi}_i}\right\|_2
+\end{equation}
+
+\section{Logarithm map from $\psi_{mean}$ to $\psi_{real}$}
+
+The average logarithm map from $\psi_{mean}$ to $\psi_{real}$, $\mathrm{E}\left[\log_{\psi_{real}}{(\psi_{mean})}\right]$, is almost constant across the number of repititions, with a maximum variance of $8.8929\e{-11}$ in its individual elements.\\
+
+\end{document}

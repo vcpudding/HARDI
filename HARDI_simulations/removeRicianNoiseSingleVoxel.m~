@@ -1,0 +1,51 @@
+function S = removeRicianNoiseSingleVoxel (S_noisy, sig, step, tol)
+
+%S_noisy: MXN matrix, where M is the number of repititions and N is the
+%number of gradients
+
+[nGradients, nReps] = size(S_noisy);
+sqSig = sig^2;
+
+S = mean(S_noisy, 2);
+a = 1e-5;
+b = 0.5;
+it = 1;
+resBuf = [];
+while 1
+    S1 = S*ones(1, nReps);
+    x = S1.*S_noisy/sqSig;
+    B = (-S1/sqSig + (besseli(1,x,1)./besseli(0,x,1)).*S_noisy/sqSig)*ones(nReps, 1);
+   % disp(B);
+    step = 1;
+    while step>1e-20 && likelihoodFunc(S+step*B, S_noisy, sig) <= likelihoodFunc(S, S_noisy, sig)+a*step*dot(B,B)
+        step = b*step;
+        %disp(likelihoodFunc(S-step*B, S_noisy, sig));        
+    end
+    %disp(step);
+    S = S+step*B;
+    lastL = l;
+    l = likelihoodFunc(S, S_noisy, sig);
+    res = abs(lastL-l);
+    if it>1 && res<1e-6
+        break;
+    end;
+    resBuf(it) = res;
+    if mod(it,10)==0
+        disp(norm(B));
+        %disp(likelihoodFunc(S, S_noisy, sig));
+    end
+    it = it+1;  
+end
+
+figure, plot(resBuf);
+
+end
+
+function l = likelihoodFunc (S, S_noisy, sig)
+[nGradients, nReps] = size(S_noisy);
+sqSig = sig^2;
+S1 = S*ones(1, nReps);
+l = (log(S_noisy/sqSig)-(S_noisy.^2+S1.^2)/(2*sqSig)+log(besseli(0, S_noisy.*S1/sqSig, 1))+S_noisy.*S1/sqSig)*ones(nReps,1);
+%l = (log(S_noisy/sqSig)-(S_noisy.^2+S1.^2)/(2*sqSig)+log(besseli(0, S_noisy.*S1/sqSig)))*ones(nReps,1);
+l = min(l);
+end

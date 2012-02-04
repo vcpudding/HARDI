@@ -1,0 +1,116 @@
+for iWeights = 1:length(weights)
+    for iSNRs = 1:length(SNRs)
+        for iBVals = 1:length(bVals)  
+            frDistBuf = [];
+            dirDevBuf = [];
+            for iAngle = 1:length(sepAngles)
+    
+                weight = weights(iWeights);
+                snr = SNRs(iSNRs);
+                bVal = bVals(iBVals);
+                fileName = sprintf('SimData/Data [Weight=(%0.1f, %0.1f)][sepAngle=%d][SNR=%d][bVal=%d].mat', weight, 1-weight, sepAngles(iAngle), snr, bVal);
+                load(fileName);    
+
+                fiber_direction1=[0 1 0]; % first fiber direction 
+                angle = sepAngles(iAngle)*pi/180;
+                orientation=atan2(fiber_direction1(2),fiber_direction1(1));
+                R=[cos(-angle) sin(-angle) 0;-sin(-angle) cos(-angle) 0;0 0 1];
+                fiber_direction2=fiber_direction1*R'; % second fiber direction
+                fiberDirs = [fiber_direction1', fiber_direction2'];
+
+                real_ODF=G*real_ODF_coef; 
+                complexDWI_ODF=G*mean_ODF_coef_avrComplexDWI; 
+                magnitudeDWI_ODF=G*mean_ODF_coef_avrMagnitudeDWI; 
+                FR_ODF=G*mean_ODF_coef_FR;
+
+                frDistBuf(1, iAngle) = fisherRaoDist(complexDWI_ODF, real_ODF);
+                frDistBuf(2, iAngle) = fisherRaoDist(magnitudeDWI_ODF, real_ODF);
+                frDistBuf(3, iAngle) = fisherRaoDist(FR_ODF, real_ODF);
+
+                dirDevBuf(1, iAngle) = dirDeviation(mean_ODF_coef_avrComplexDWI, fiberDirs);
+                dirDevBuf(2, iAngle) = dirDeviation(mean_ODF_coef_avrMagnitudeDWI, fiberDirs);
+                dirDevBuf(3, iAngle) = dirDeviation(mean_ODF_coef_FR, fiberDirs);
+                dirDevBuf(4, iAngle) = dirDeviation(real_ODF_coef, fiberDirs);
+
+            end   
+                
+            fprintf(fid, '\\begin{table}[H]\n\\caption{Weights=[%0.1f, %0.1f], SNR=%d, $b$-value=%d}\n\\begin{center}\n', weight, 1-weight, snr, bVal);
+            fprintf(fid, '\\begin{tabular*}{0.8\\textwidth}{@{\\extracolsep{\\fill}}l |*{4}{c}}\n');
+            fprintf(fid, '\\multicolumn{5}{c}{\\textbf{Fisher-Rao distances to the real ODF}}\\\\ \\hline\n');
+            fprintf(fid, '\\backslashbox{Methods}{Separating angles} & $45^{\\circ}$ & $60^{\\circ}$ & $75^{\\circ}$ & $90^{\\circ}$ \\\\ \\hline\n');
+            fprintf(fid, 'Mean complex DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', frDistBuf(1,:));
+            fprintf(fid, 'Estimated magnitude DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', frDistBuf(2,:));
+            fprintf(fid, 'Mean ODF & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\ \\hline\n', frDistBuf(3,:));
+            fprintf(fid, '\\end{tabular*}\n');
+            fprintf(fid, '\\begin{tabular*}{0.8\\textwidth}{@{\\extracolsep{\\fill}}l |*{4}{c}}\n');
+            fprintf(fid, '\\multicolumn{5}{c}{\\textbf{Direction deviation}}\\\\ \\hline\n');
+            fprintf(fid, '\\backslashbox{Methods}{Separating angles} & $45^{\\circ}$ & $60^{\\circ}$ & $75^{\\circ}$ & $90^{\\circ}$ \\\\ \\hline\n');
+            fprintf(fid, 'Mean complex DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', dirDevBuf(1,:));
+            fprintf(fid, 'Estimated magnitude DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', dirDevBuf(2,:));
+            fprintf(fid, 'Mean ODF & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\ \n', dirDevBuf(3,:));
+            fprintf(fid, 'Real ODF & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\\hline\n', dirDevBuf(4,:));
+            fprintf(fid, '\\end{tabular*}\n');   
+            fprintf(fid, '\\end{center}\n\\end{table}\n\n\n');
+        end
+    end
+end
+
+for iWeights = 1:length(weights)
+    for iSNRs = 1:length(SNRs)
+        for iBVals = 1:length(bVals)  
+            frDistBuf = [];
+            dirDevBuf = [];
+            for iAngle = 1:length(sepAngles)
+    
+                weight = weights(iWeights);
+                snr = SNRs(iSNRs);
+                bVal = bVals(iBVals);
+                fileName = sprintf('SimData/Data [Weight=(%0.1f, %0.1f)][sepAngle=%d][SNR=%d][bVal=%d].mat', weight, 1-weight, sepAngles(iAngle), snr, bVal);
+                load(fileName);    
+
+                fiber_direction1=[0 1 0]; % first fiber direction 
+                angle = sepAngles(iAngle)*pi/180;
+                orientation=atan2(fiber_direction1(2),fiber_direction1(1));
+                R=[cos(-angle) sin(-angle) 0;-sin(-angle) cos(-angle) 0;0 0 1];
+                fiber_direction2=fiber_direction1*R'; % second fiber direction
+                fiberDirs = [fiber_direction1', fiber_direction2'];
+
+                real_ODF=G*real_ODF_coef; 
+                complexDWI_ODF=G*mean_ODF_coef_avrComplexDWI; 
+                magnitudeDWI_ODF=G*mean_ODF_coef_avrMagnitudeDWI; 
+                FR_ODF=G*mean_ODF_coef_FR;
+
+                frDistBuf(1, iAngle) = fisherRaoDist(complexDWI_ODF, real_ODF);
+                frDistBuf(2, iAngle) = fisherRaoDist(magnitudeDWI_ODF, real_ODF);
+                frDistBuf(3, iAngle) = fisherRaoDist(FR_ODF, real_ODF);
+
+                dirDevBuf(1, iAngle) = dirDeviation(mean_ODF_coef_avrComplexDWI, fiberDirs);
+                dirDevBuf(2, iAngle) = dirDeviation(mean_ODF_coef_avrMagnitudeDWI, fiberDirs);
+                dirDevBuf(3, iAngle) = dirDeviation(mean_ODF_coef_FR, fiberDirs);
+                dirDevBuf(4, iAngle) = dirDeviation(real_ODF_coef, fiberDirs);
+
+            end   
+                
+            fprintf(fid, '\\begin{table}[H]\n\\caption{Weights=[%0.1f, %0.1f], SNR=%d, $b$-value=%d}\n\\begin{center}\n', weight, 1-weight, snr, bVal);
+            fprintf(fid, '\\begin{tabular*}{0.8\\textwidth}{@{\\extracolsep{\\fill}}l |*{4}{c}}\n');
+            fprintf(fid, '\\multicolumn{5}{c}{\\textbf{Fisher-Rao distances to the real ODF}}\\\\ \\hline\n');
+            fprintf(fid, '\\backslashbox{Methods}{Separating angles} & $45^{\\circ}$ & $60^{\\circ}$ & $75^{\\circ}$ & $90^{\\circ}$ \\\\ \\hline\n');
+            fprintf(fid, 'Mean complex DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', frDistBuf(1,:));
+            fprintf(fid, 'Estimated magnitude DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', frDistBuf(2,:));
+            fprintf(fid, 'Mean ODF & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\ \\hline\n', frDistBuf(3,:));
+            fprintf(fid, '\\end{tabular*}\n');
+            fprintf(fid, '\\begin{tabular*}{0.8\\textwidth}{@{\\extracolsep{\\fill}}l |*{4}{c}}\n');
+            fprintf(fid, '\\multicolumn{5}{c}{\\textbf{Direction deviation}}\\\\ \\hline\n');
+            fprintf(fid, '\\backslashbox{Methods}{Separating angles} & $45^{\\circ}$ & $60^{\\circ}$ & $75^{\\circ}$ & $90^{\\circ}$ \\\\ \\hline\n');
+            fprintf(fid, 'Mean complex DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', dirDevBuf(1,:));
+            fprintf(fid, 'Estimated magnitude DWI & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\n', dirDevBuf(2,:));
+            fprintf(fid, 'Mean ODF & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\ \n', dirDevBuf(3,:));
+            fprintf(fid, 'Real ODF & %0.4f &  %0.4f &  %0.4f &  %0.4f \\\\\\hline\n', dirDevBuf(4,:));
+            fprintf(fid, '\\end{tabular*}\n');   
+            fprintf(fid, '\\end{center}\n\\end{table}\n\n\n');
+        end
+    end
+end
+
+fprintf(fid, '\\end{document}');
+fclose(fid);

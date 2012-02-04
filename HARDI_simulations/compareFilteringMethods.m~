@@ -1,0 +1,66 @@
+function compareFilteringMethods(weight, snr, bVal)
+
+close all;
+addpath('tensor_toolbox_2.4');
+addpath('tensor_toolbox_2.4/algorithms');
+sepAngles = [45, 60, 75, 90];
+
+UnitVectors
+order=4;
+G=constructMatrixOfMonomials(g,order);
+
+%datDistFR = zeros(3, length(sepAngles));
+%datDirDev = zeros(4, length(sepAngles));
+tableDistFR = cell(4,length(sepAngles)+1);
+tableDistFR{1,:} = {'Fisher Rao distance', '45', '60', '75', '90'};
+tableDistFR{2:4,
+tableDirDev = cell(5, length(sepAngles)+1);
+tableDirDev{1,:} = {'Direction deviation', '45', '60', '75', '90'};
+
+for iAngle = 1:length(sepAngles)
+    
+    fileName = sprintf('SimData/Data [Weight=(%0.1f, %0.1f)][sepAngle=%d][SNR=%d][bVal=%d].mat', weight(1), weight(2), sepAngles(iAngle), snr, bVal);
+    load(fileName);
+
+    real_ODF=G*real_ODF_coef; 
+    complexDWI_ODF=G*mean_ODF_coef_avrComplexDWI; 
+    magnitudeDWI_ODF=G*mean_ODF_coef_avrMagnitudeDWI; 
+    FR_ODF=G*mean_ODF_coef_FR; 
+    
+    datDistFR(1,iAngle) = fisherRaoDist(complexDWI_ODF, real_ODF);
+    datDistFR(2,iAngle) = fisherRaoDist(magnitudeDWI_ODF, real_ODF);
+    datDistFR(3,iAngle) = fisherRaoDist(FR_ODF, real_ODF);
+    
+    fiber_direction1=[0 1 0]; % first fiber direction 
+    angle = sepAngles(iAngle)*pi/180;
+    R=[cos(-angle) sin(-angle) 0;-sin(-angle) cos(-angle) 0;0 0 1];
+    fiber_direction2=fiber_direction1*R'; % second fiber direction
+    fiberDirs = [fiber_direction1', fiber_direction2'];
+    
+    datDirDev{1, iAngle, :} = num2str(dirDeviation(mean_ODF_coef_avrComplexDWI, fiberDirs), 2);
+    datDirDev{2, iAngle, :} = num2str(dirDeviation(mean_ODF_coef_avrMagnitudeDWI, fiberDirs), 2);
+    datDirDev{3, iAngle, :} = num2str(dirDeviation(mean_ODF_coef_FR, fiberDirs), 2);
+    datDirDev{4, iAngle, :} = num2str(dirDeviation(real_ODF_coef, fiberDirs), 2);
+    
+end
+
+f = figure('Position',[200 200 600  300]);
+cnames = {'45', '60', '75', '90'};
+rnames = {'Mean complex DWIs','Mean magnitude DWIs','FR mean of ODFs', 'Real DWI'};
+
+uitable('Parent', f,...
+        'ColumnWidth', {100},...
+        'Units','normalized','Position',...
+        [0 0.5 1 0.5], 'Data', datDistFR,... 
+        'ColumnName', cnames,...
+        'RowName',rnames(1:3));
+    
+uitable('Parent', f,...
+        'ColumnWidth', {100},...
+        'Units','normalized','Position',...
+        [0 0 1 0.5], 'Data', datDirDev,... 
+        'ColumnName', cnames,...
+        'RowName',rnames);
+
+
+end

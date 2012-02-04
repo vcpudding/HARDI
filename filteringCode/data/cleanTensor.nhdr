@@ -1,0 +1,16 @@
+NRRD0005
+# Complete NRRD file format specification at:
+# http://teem.sourceforge.net/nrrd/format.html
+content: (double)(???)
+type: double
+dimension: 4
+space: left-posterior-superior
+sizes: 7 65 33 46
+space directions: none (2,0,0) (0,-2,0) (0,0,-2)
+centerings: ??? cell cell cell
+kinds: 3D-masked-symmetric-matrix space space space
+endian: little
+encoding: raw
+space units: "mm" "mm" "mm"
+measurement frame: (1,0,0) (0,1,0) (0,0,1)
+data file: cleanTensor.raw

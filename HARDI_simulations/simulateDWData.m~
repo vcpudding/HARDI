@@ -1,0 +1,17 @@
+function S = simulateDWData (bVal, gradientDirections, orientations, weights, isAnisotropic)
+
+if isAnisotropic
+    L = diag([1.7e-3, 3e-4, 3e-4]);
+else
+    L = diag([7e-4, 7e-4, 7e-4]);
+end
+
+for i=1:length(gradientDirections)
+    S(i) = 0;
+    for j=1:length(orientations)
+        angle 
+        R = [cos(orientations(j)) sin(orientation) 0;-sin(orientation) cos(orientation) 0;0 0 1];
+    end
+end
+
+end
