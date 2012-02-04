@@ -19,24 +19,24 @@ while 1
     c = exp(-imgGradSqNorm/conductance);
     %c = c(:,:,:,ones(size(filteredImg,4),1));
     %P = vectorDivergence(c.*imgGradX, c.*imgGradY, c.*imgGradZ);
-    P = weightedVectorDivergence(filteredImg, c);
+    P = weightedVectorDivergence(filteredImg, c)*1e2;
     
     step = 1;
     %g = B+priorWeight*P;
     g = P;
     %disp(['norm B: ', num2str(norm(B(:)))]);
     %disp(['norm P: ', num2str(norm(P(:)))]);
-    step = 1e-2;
-%     while step>1e-20 && logPosterior(filteredImg+step*g, noisyImg, sqStdDeviation, conductance, priorWeight)...
-%             <=logPosterior(filteredImg, noisyImg, sqStdDeviation, conductance, priorWeight)+a*step*dot(g(:),g(:))
-%         step = b*step;
-%     end
-%     disp(['step = ', num2str(step)]);
+    %step = 1e-2;
+    while step>1e-20 && logPosterior(filteredImg+step*g, noisyImg, sqStdDeviation, conductance, priorWeight)...
+            <=logPosterior(filteredImg, noisyImg, sqStdDeviation, conductance, priorWeight)+a*step*dot(g(:),g(:))
+        step = b*step;
+    end
+    disp(['step = ', num2str(step)]);
     filteredImg = filteredImg + step*g;
     
     logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
     %disp(['posterior:', num2str(logPost)]);
-    disp(['posterior:', num2str(logPost-lastLogPost)]);
+    disp(['e:', num2str(logPost-lastLogPost)]);
     if abs(logPost-lastLogPost) <tolerance
         break;
     end;
@@ -61,7 +61,7 @@ imgGradSqNorm = sum(imgGradX.^2,4)+sum(imgGradY.^2,4)+sum(imgGradZ.^2,4);
 E = exp(-imgGradSqNorm/conductance);
 E = priorWeight*sum(E(:));
 %p2 = 1/(1-exp(-priorWeight*numel(noisyImg))) * exp(-E);
-p2 = -E;
+p2 = E;
 
 %p = p1+p2;
 p=p2;
