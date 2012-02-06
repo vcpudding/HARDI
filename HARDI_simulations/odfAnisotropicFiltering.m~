@@ -6,10 +6,8 @@ e = energyFunc(filteredODF, conductance);
 while 1
     laste = e;
     dODF = odfAnisotropicDivergence(filteredODF, conductance);
-    filteredODF = expMap(filteredODF, step*dODF);
+    filteredODF = filteredODF + step*dODF;
     e = energyFunc(filteredODF, conductance);
-    
-    disp(['e:', num2str(e-laste)]);
     
     if e-laste < tolerance
         break;
@@ -35,9 +33,7 @@ end
 
 function e = expMap(odf, dODF)
 
-d = sqrt(sum(odf.^2, 4));
-d = d(:,:,:,ones(size(odf,4),1));
-e = cos(d).*odf + sin(d).*dODF./d;
+d = sqrt(dot(dO
 
 end
 
@@ -109,6 +105,8 @@ for i=1:m
                            exp(-dot(gP,gP)/conductance)*gP;
         end
     end
+end
+
 end
 
 end

@@ -1,11 +1,12 @@
-function filteredImg = dwiAnisotropicFiltering (noisyImg, stdDeviation, conductance, priorWeight, tolerance)
+function filteredImg = dwiAnisotropicFiltering (noisyImg, stdDeviation, conductance, priorWeight, tolerance, step)
 
 %initialize
 %filteredImg = vectorAvrFilter3D(noisyImg, 3);
 filteredImg = noisyImg;
 sqStdDeviation = stdDeviation^2;
 logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
-a=0.001;
+logPost = sum(logPost(:));
+a=0.1;
 b=0.5;
 it = 1;
 eBuf = [];
@@ -14,22 +15,25 @@ while 1
     lastLogPost = logPost;
     
     x = filteredImg.*noisyImg/sqStdDeviation;
-    B = -noisyImg/sqStdDeviation + besseli(1,x,1)./besseli(0,x,1).*noisyImg/sqStdDeviation;
-    
+    B = -filteredImg/sqStdDeviation + besseli(1,x,1)./besseli(0,x,1).*noisyImg/sqStdDeviation;    
+    B = B/numel(noisyImg(:,:,:,1));
     P = vectorAnisotropicDivergence(filteredImg, conductance);
     
-    step = 1e-3;
-    %g = B+priorWeight*P;
-    g = P;
-    
-    %disp(['step = ', num2str(step)]);
+    g = B+priorWeight*P;
+    %g = P;
+%     while step>1e-20 && logPosterior(filteredImg+step*g, noisyImg, sqStdDeviation, conductance, priorWeight)...
+%             <= logPosterior(filteredImg, noisyImg, sqStdDeviation, conductance, priorWeight)+a*step*dot(g(:),g(:))
+%         step = b*step;  
+%     end    
+%     disp(['step = ', num2str(step)]);
     filteredImg = filteredImg + step*g;
     
     logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
+    logPost = sum(logPost(:));
     %disp(['posterior:', num2str(logPost)]);
     disp(['e:', num2str(logPost-lastLogPost)]);
     eBuf = [eBuf, logPost-lastLogPost];
-    if abs(logPost-lastLogPost) <tolerance
+    if logPost-lastLogPost <tolerance
         break;
     end;
     
@@ -46,16 +50,15 @@ function p = logPosterior(filteredImg, noisyImg, sqStdDeviation, conductance, pr
 
 z = filteredImg.*noisyImg/sqStdDeviation;
 p1 = log(noisyImg/sqStdDeviation)-(filteredImg.^2+noisyImg.^2)/2/sqStdDeviation+log(besseli(0,z,1))+abs(z);
-p1 = sum(p1(:));
 
 [imgGradX, imgGradY, imgGradZ] = vectorGradient(filteredImg);
-imgGradSqNorm = sum(imgGradX.^2,4)+sum(imgGradY.^2,4)+sum(imgGradZ.^2,4);
+%imgGradSqNorm = sum(imgGradX.^2,4)+sum(imgGradY.^2,4)+sum(imgGradZ.^2,4);
+imgGradSqNorm = imgGradX.^2+imgGradY.^2+imgGradZ.^2;
 E = exp(-imgGradSqNorm/2/conductance);
-p2 = priorWeight*conductance*sum(E(:));
-%p2 = 1/(1-exp(-priorWeight*numel(noisyImg))) * exp(-E);
+p2 = priorWeight*conductance*E;
 
-%p = p1+p2;
-p=p2;
+p = p1+p2;
+%p=p2;
 
 end
 
