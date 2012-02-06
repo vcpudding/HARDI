@@ -1,34 +1,42 @@
 function filteredImg = dwiAnisotropicFiltering (noisyImg, stdDeviation, conductance, priorWeight, tolerance)
 
 %initialize
-%filteredImg = vectorAvrFilter3D(noisyImg, 3);
-filteredImg = noisyImg;
+filteredImg = vectorAvrFilter3D(noisyImg, 3);
 sqStdDeviation = stdDeviation^2;
 logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
-a=0.001;
+a=0.1;
 b=0.5;
 it = 1;
-eBuf = [];
+
 %gradient descent
 while 1
     lastLogPost = logPost;
     
     x = filteredImg.*noisyImg/sqStdDeviation;
     B = -noisyImg/sqStdDeviation + besseli(1,x,1)./besseli(0,x,1).*noisyImg/sqStdDeviation;
-    
+    %[imgGradX, imgGradY, imgGradZ] = vectorGradient(filteredImg);
+    %imgGradSqNorm = sum(imgGradX.^2,4)+sum(imgGradY.^2,4)+sum(imgGradZ.^2,4);
+    %c = exp(-imgGradSqNorm/conductance);
+    %c = c(:,:,:,ones(size(filteredImg,4),1));
+    %P = vectorDivergence(c.*imgGradX, c.*imgGradY, c.*imgGradZ);
     P = vectorAnisotropicDivergence(filteredImg, conductance);
     
-    step = 1e-3;
+    step = 1;
     %g = B+priorWeight*P;
     g = P;
-    
-    %disp(['step = ', num2str(step)]);
+    %disp(['norm B: ', num2str(norm(B(:)))]);
+    %disp(['norm P: ', num2str(norm(P(:)))]);
+    step = 1e-3;
+%     while step>1e-20 && logPosterior(filteredImg+step*g, noisyImg, sqStdDeviation, conductance, priorWeight)...
+%             <=logPosterior(filteredImg, noisyImg, sqStdDeviation, conductance, priorWeight)+a*step*dot(g(:),g(:))
+%         step = b*step;
+%     end
+%     disp(['step = ', num2str(step)]);
     filteredImg = filteredImg + step*g;
     
     logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
     %disp(['posterior:', num2str(logPost)]);
     disp(['e:', num2str(logPost-lastLogPost)]);
-    eBuf = [eBuf, logPost-lastLogPost];
     if abs(logPost-lastLogPost) <tolerance
         break;
     end;
@@ -38,7 +46,7 @@ while 1
 end
 
 %output
-figure, plot(eBuf);
+return;
 
 end
 
@@ -51,8 +59,9 @@ p1 = sum(p1(:));
 [imgGradX, imgGradY, imgGradZ] = vectorGradient(filteredImg);
 imgGradSqNorm = sum(imgGradX.^2,4)+sum(imgGradY.^2,4)+sum(imgGradZ.^2,4);
 E = exp(-imgGradSqNorm/2/conductance);
-p2 = priorWeight*conductance*sum(E(:));
+E = priorWeight*sum(E(:));
 %p2 = 1/(1-exp(-priorWeight*numel(noisyImg))) * exp(-E);
+p2 = -E;
 
 %p = p1+p2;
 p=p2;
@@ -75,28 +84,53 @@ end
 
 end
 
+function div = anisotropicDivergence(vol, conductance)
+
+ndim = length(size(vol));
+div = zeros(size(vol));
+
+if ndim == 1
+  perm = [1 2];
+else
+  perm = [2:ndim 1]; % Cyclic permutation
+end
+
+for k=1:ndim
+    [n, p] = size(vol);
+    d = zeros(size(vol), class(vol));
+    
+    if n>1
+        g = vol(2,:)-vol(1,:);
+        w = exp(-g.^2/conductance);
+        d(1,:) = d(1,:) + w.*(vol(2,:)-vol(1,:));
+        
+        g = vol(n-1,:)-vol(n,:);
+        w = exp(-g.^2/conductance);
+        d(n,:) = d(n,:) + w.*(vol(n-1,:)-vol(n,:));
+    end
+    
+    if n>2
+        g = vol(3:n,:)-vol(2:n-1,:);
+        w = exp(-g.^2/conductance);
+        d(2:n-1,:) = d(2:n-1,:) + w.*(vol(3:n,:)-vol(2:n-1,:));
+        
+        g = vol(1:n-2,:)-vol(2:n-1,:);
+        w = exp(-g.^2/conductance);
+        d(2:n-1,:) = d(2:n-1,:) + w.*(vol(1:n-2,:)-vol(2:n-1,:));
+    end
+    
+    div = div+ipermute(d,[k:ndim 1:k-1]);    
+    vol = permute(vol, perm);
+end
+
+end
 
 function div = vectorAnisotropicDivergence (vol, conductance)
 
 [m n p vecdim] = size(vol);
 div = zeros(size(vol));
+
 for i=1:m
     for j=1:n
-        for k=1:p
-            gN = vol(max(1,i-1),j,k,:) - vol(i,j,k,:);
-            gS = vol(min(m,i+1),j,k,:) - vol(i,j,k,:);
-            gW = vol(i, max(1,j-1),k,:) - vol(i,j,k,:);
-            gE = vol(i, min(n,j+1),k,:) - vol(i,j,k,:);
-            gF = vol(i, j, max(1,k-1),:) - vol(i,j,k,:);
-            gP = vol(i, j, min(p,k+1),:) - vol(i,j,k,:);
-            
-            div(i,j,k,:) = exp(-dot(gN,gN)/conductance)*gN + ...
-                           exp(-dot(gS,gS)/conductance)*gS + ...
-                           exp(-dot(gW,gW)/conductance)*gW + ...
-                           exp(-dot(gE,gE)/conductance)*gE + ...
-                           exp(-dot(gF,gF)/conductance)*gF + ...
-                           exp(-dot(gP,gP)/conductance)*gP;
-        end
-    end
-end
+        
 end

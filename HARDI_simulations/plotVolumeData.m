@@ -6,7 +6,7 @@ dims = size(volDat);
 hFigs = [];
 for i=1:dims(3)
     if mod(i, nSlicePerFig)==1
-        hFigs = [hFigs, figure];
+        %hFigs = [hFigs, figure];
         colormap gray;
         ratio = length(colormap)/max(max(max(volDat)));
     end

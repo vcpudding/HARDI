@@ -1,0 +1,29 @@
+function filteredImg = anisotropicFiltering (noisyImg, conductance)
+
+filteredImg = noisyImg;
+[m n] = size(noisyImg);
+
+while 1
+    step = 0.1;
+    dI = zeros(m,n);
+    for i=1:m
+        for j=1:n            
+            gN = noisyImg(max(1,i-1),j) - noisyImg(i,j);
+            gS = noisyImg(min(m,i+1),j) - noisyImg(i,j);
+            gW = noisyImg(i, max(1,j-1)) - noisyImg(i,j);
+            gE = noisyImg(i, min(n,j+1)) - noisyImg(i,j);
+            dI(i,j) = exp(-gN^2/conductance)*gN+exp(-gS^2/conductance)*gS+exp(-gW^2/conductance)*gW+exp(-gE^2/conductance)*gE;
+        end
+    end
+    
+    filteredImg = filteredImg * step*dI;
+end
+
+end
+
+function e = energyFunc(img, conductance)
+
+[gx gy] = gradient(img);
+e = exp(-(gx.^2+gy.^2)/conductan
+
+end
