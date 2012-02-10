@@ -1,0 +1,120 @@
+function plotAnisotropicFilteringResults
+
+close all
+clear all
+
+addpath('tensor_toolbox_2.4');
+addpath('tensor_toolbox_2.4/algorithms');
+
+SNRs = [10 25 50 100];
+bVals = [1500 3000];
+conductances = [1e-4, 1e-3, 1e-2];
+weights = [0, 10, 100, 10000];
+dims = [16,16,3];
+fiberWidth = 4;
+
+for iBVal = 1%:length(bVals)        
+    cleanImg = simulateCrossingFibers(dims, fiberWidth, bVals(iBVal), 10000);
+    %cleanODFSlice = odfFromImg(cleanImg(:,:,2,:));
+    
+        
+    for iSNR=1%:length(SNRs)
+        
+%         for iWeight = 1:length(weights)
+%             dFRs = zeros(dims(1), dims(2), length(conductances));
+%             dirDevs = zeros(dims(1), dims(2), length(conductances));
+%             gfas = zeros(dims(1), dims(2), length(conductances));
+%             for iCond = 1:length(conductances)
+%                 fileName = sprintf('results/DWI_filtered [SNR=%d][bVal=%d][c=%f][w=%d].mat', SNRs(iSNR), bVals(iBVal), conductances(iCond), weights(iWeight));
+%                 load(fileName);
+%                 dwiFilteredODFSlice = odfFromImg(dwiFiltered(:,:,2,:));
+%                 [dFR dirDev gfa] = stats(dwiFilteredODFSlice, cleanODFSlice);
+%                 dFRs(:,:,iCond) = dFR;
+%                 dirDevs(:,:,iCond) = dirDev;
+%                 gfas(:,:,iCond) = gfa;
+%             end
+%         end
+        
+        dFRs = zeros(dims(1), dims(2), length(conductances));
+        dirDevs = zeros(dims(1), dims(2), length(conductances));
+        gfas = zeros(dims(1), dims(2), length(conductances));
+        for iCond = 1:length(conductances)        
+            fileName = sprintf('results/ODF_filtered [SNR=%d][bVal=%d][c=%f].mat', SNRs(iSNR), bVals(iBVal), conductances(iCond));
+            load(fileName);
+            
+            [dFR dirDev gfa] = stats(odfFiltered(:,:,2,:), cleanODFSlice, fiberWidth);
+            dFRs(:,:,iCond) = dFR;
+            dirDevs(:,:,iCond) = dirDev;
+            gfas(:,:,iCond) = gfa;
+            
+            plotAndSaveFigure(dFRs, sprintf('figures/ODF_dFR|SNR=%d|bVal=%d|c=%g.eps'));
+        end
+    end    
+end
+
+
+end
+
+function [dFR dirDev gfa] = stats (odfSlice, cleanODFSlice, fiberWidth)
+
+[m n odfDim] = size(odfSlice);
+
+dFR = zeros(m,n);
+dirDev = zeros(m,n);
+gfa = zeros(m,n);
+
+load GradientOrientations_64
+UnitVectors
+order = 4;
+G=constructMatrixOfMonomials(g,order);
+
+for i=1:m
+    for j=1:n
+        odf = reshape(odfSlice(i,j,:), [odfDim,1]);
+        cleanODF = reshape(cleanODFSlice(i,j,:), [odfDim, 1]);
+        dFR(i,j) = fisherRaoDist(odf, cleanODF);
+        odfCoef = G\odf;
+        dirDev(i,j) = dirDeviation(odfCoef, getRealFibDirs([m,n], fiberWidth,i,j));
+        gfa(i,j) = GFA(odf)-GFA(cleanODF);
+    end
+end
+
+end
+
+function dirs = getRealFibDirs (dims, fiberWidth, i,j)
+border1 = (dims(1)-fiberWidth)/2;
+border2 = (dims(2)-fiberWidth)/2;
+
+if i-border1>=1 && i-border1<=fiberWidth
+    if j-border2>=1 && j-border2 <=fiberWidth
+        %crossing region
+        dirs = [0 1 0; 1 0 0];
+    else
+        %horizontal region
+        dirs = [1 0 0];
+    end
+else
+    if j-border2>=1 && j-border2 <=fiberWidth
+        %vertical region
+        dirs = [0 1 0];
+    else
+        %background
+        dirs = [1 0 0];
+    end
+end
+
+end
+
+function plotAndSaveFigure (dat, title, fileName)
+
+hFig = figure('Visible', 'off','Name',title,'NumberTitle','off');
+colormap jet;
+caxis([min(dat(:)) max(dat(:))]);
+nSubplots = size(dat,3);
+for i=1:nSubplots
+    subplot(1,nSubplots,i);
+    image(dat(:,:,i));
+end
+colorbar;
+print(hFig, fileName, '-depsc');
+end

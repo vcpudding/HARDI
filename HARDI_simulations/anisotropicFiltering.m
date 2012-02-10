@@ -1,13 +1,13 @@
-function filteredImg = anisotropicFiltering (noisyImg, conductance, tolerance)
+function filteredImg = anisotropicFiltering (noisyImg, conductance, tolerance, step)
 
 filteredImg = noisyImg;
 [m n] = size(noisyImg);
 e = energyFunc(filteredImg, conductance);
 eBuf = [];
+it=1;
 
-while 1
+while it<=100
     laste = e;
-    step = 1e-5;
     dI = zeros(m,n);
     for i=1:m
         for j=1:n            
@@ -21,10 +21,14 @@ while 1
     
     filteredImg = filteredImg + step*dI;
     e = energyFunc(filteredImg, conductance);
-    eBuf = [eBuf, e-laste];
+    eBuf = [eBuf, e];
+    if mod(it,100)==1
+        disp(e);
+    end
     if abs(e-laste)<tolerance
         break;
     end
+    it = it+1;
 end
 
 figure, plot(eBuf);
@@ -35,6 +39,6 @@ function e = energyFunc(img, conductance)
 
 [gx gy] = gradient(img);
 e = exp(-(gx.^2+gy.^2)/conductance);
-e = conductance*sum(e(:));
+e = sum(e(:));
 
 end

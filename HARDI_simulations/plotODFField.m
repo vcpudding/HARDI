@@ -3,7 +3,7 @@ function hFigs = plotODFField (odfCoefVol)
 hFigs = [];
 dims = size(odfCoefVol);
 for k=1:dims(3)
-    hFigs = [hFigs, figure('Position', [10,10,800,800])];
+    hFigs = [hFigs, figure('Position', [10,10,800,800], 'Visible', 'off')];
     for i=1:dims(1)
         for j=1:dims(2)
             subplot(dims(1), dims(2), j+dims(2)*(i-1));

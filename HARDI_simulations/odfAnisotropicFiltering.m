@@ -1,19 +1,23 @@
-function filteredODF = odfAnisotropicFiltering (noisyODF, conductance, tolerance, step)
+function [filteredODF eBuf] = odfAnisotropicFiltering (noisyODF, conductance, tolerance, step)
 
 filteredODF = noisyODF;
 e = energyFunc(filteredODF, conductance);
+eBuf =[];
+it=1;
 
-while 1
+while it<=200
     laste = e;
     dODF = odfAnisotropicDivergence(filteredODF, conductance);
     filteredODF = expMap(filteredODF, step*dODF);
-    e = energyFunc(filteredODF, conductance);
-    
-    disp(['e:', num2str(e-laste)]);
+    e = energyFunc(filteredODF, conductance);   
+   
+    disp(['#', num2str(it), '  e:', num2str(e)]);
+    eBuf = [eBuf e];
     
     if e-laste < tolerance
         break;
     end
+    it = it+1;
 end
 
 end

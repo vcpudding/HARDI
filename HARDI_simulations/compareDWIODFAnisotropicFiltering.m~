@@ -1,0 +1,20 @@
+function compareDWIODFAnisotropicFiltering
+
+SNRs = [10 25 50 100];
+bVals = [1500 3000];
+conductances = [1e-4, 1e-3, 1e-2];
+weights = [0, 10, 100, 10000];
+
+for iSNR=1:length(SNRs)
+    for iBVal = 1:length(bVals)
+        
+        noisyImg = simulateCrossingFibers([16,16,3], 4, bVals(iBVal), SNRs(iSNR));
+        
+        
+        for iCond = 1:length(conductances)
+            
+        end
+    end    
+end
+
+end

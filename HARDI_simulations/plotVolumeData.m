@@ -8,7 +8,7 @@ for i=1:dims(3)
     if mod(i, nSlicePerFig)==1
         %hFigs = [hFigs, figure];
         colormap gray;
-        ratio = length(colormap)/max(max(max(volDat)));
+        ratio = length(colormap)/max(volDat(:));
     end
     subplot(rowsPerFig, colsPerFig, mod(i-1, nSlicePerFig)+1);    
     borderedSlice = zeros(dims(1:2)+2);

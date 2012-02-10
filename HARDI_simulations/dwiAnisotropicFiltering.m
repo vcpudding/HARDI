@@ -1,8 +1,8 @@
-function filteredImg = dwiAnisotropicFiltering (noisyImg, stdDeviation, conductance, priorWeight, tolerance, step)
+function [filteredImg eBuf] = dwiAnisotropicFiltering (noisyImg, stdDeviation, conductance, priorWeight, tolerance, step)
 
 %initialize
-%filteredImg = vectorAvrFilter3D(noisyImg, 3);
-filteredImg = noisyImg;
+filteredImg = vectorAvrFilter3D(noisyImg, 3);
+%filteredImg = noisyImg;
 sqStdDeviation = stdDeviation^2;
 logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
 logPost = sum(logPost(:));
@@ -11,28 +11,21 @@ b=0.5;
 it = 1;
 eBuf = [];
 %gradient descent
-while 1
+while it<=200
     lastLogPost = logPost;
     
     x = filteredImg.*noisyImg/sqStdDeviation;
-    B = -filteredImg/sqStdDeviation + besseli(1,x,1)./besseli(0,x,1).*noisyImg/sqStdDeviation;    
-    B = B/numel(noisyImg(:,:,:,1));
+    B = -filteredImg/sqStdDeviation + besseli(1,x,1)./besseli(0,x,1).*noisyImg/sqStdDeviation;
     P = vectorAnisotropicDivergence(filteredImg, conductance);
     
     g = B+priorWeight*P;
-    %g = P;
-%     while step>1e-20 && logPosterior(filteredImg+step*g, noisyImg, sqStdDeviation, conductance, priorWeight)...
-%             <= logPosterior(filteredImg, noisyImg, sqStdDeviation, conductance, priorWeight)+a*step*dot(g(:),g(:))
-%         step = b*step;  
-%     end    
-%     disp(['step = ', num2str(step)]);
     filteredImg = filteredImg + step*g;
     
     logPost = logPosterior(filteredImg, noisyImg, stdDeviation, conductance, priorWeight);
     logPost = sum(logPost(:));
     %disp(['posterior:', num2str(logPost)]);
-    disp(['e:', num2str(logPost-lastLogPost)]);
-    eBuf = [eBuf, logPost-lastLogPost];
+    disp(['#', num2str(it), '  e:', num2str(logPost)]);
+    eBuf = [eBuf, logPost];
     if logPost-lastLogPost <tolerance
         break;
     end;
@@ -42,7 +35,7 @@ while 1
 end
 
 %output
-figure, plot(eBuf);
+%figure, plot(eBuf);
 
 end
 

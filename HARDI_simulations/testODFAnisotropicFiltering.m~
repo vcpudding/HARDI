@@ -2,11 +2,11 @@ function testODFAnisotropicFiltering (conductance, tolerance, step)
 
 % noisyImg = simulateCrossingFibers([16,16,3], 4, 1500, 50);
 % 
-% load GradientOrientations_64
-% UnitVectors
-% order = 4;
-% delta = 200;
-% G=constructMatrixOfMonomials(g,order);
+load GradientOrientations_64
+UnitVectors
+order = 4;
+delta = 200;
+G=constructMatrixOfMonomials(g,order);
 % 
 % noisyODF = zeros(16,16,3,length(G));
 % 
@@ -26,7 +26,10 @@ load('../../Data/SimData/ODF_SNR=50.mat');
 
 filteredODF = odfAnisotropicFiltering(noisyODF, conductance, tolerance, step);
 filteredODF = permute(filteredODF, [4 1 2 3]);
-filteredODF_
-figure, plotODFField(filteredODF);
+[n p] = size(filteredODF);
+filteredODF_coef = G\reshape(filteredODF, [n p]);
+filteredODF_coef = ipermute(filteredODF_coef, [4 1 2 3]);
+filteredODF_coef = reshape(filteredODF_coef, [1
+figure, plotODFField(filteredODF_coef(:,:,2,:));
 
 end
